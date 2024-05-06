@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 20:21:46 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/06 10:44:04 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/06 18:35:40 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-static void	ft_megaphone(int ac, char **av)
+static void	megaphone(int ac, char **av)
 {
 	int	i;
 
@@ -31,6 +31,6 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
-		ft_megaphone(ac, av);
+		megaphone(ac, av);
 	return (0);
 }

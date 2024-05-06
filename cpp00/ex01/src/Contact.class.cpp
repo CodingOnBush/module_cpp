@@ -1,5 +1,4 @@
-#include <iostream>
-#include "../inc/Contact.class.hpp"
+#include "../inc/phonebook.hpp"
 
 Contact::Contact(
 	std::string first_name,
@@ -14,18 +13,11 @@ Contact::Contact(
 	phone_number(phone_number),
 	darkest_secret(darkest_secret)
 {
-	std::cout << "Contact constructor called" << std::endl;
-	std::cout << "First name: " << first_name << std::endl;
-	std::cout << "Last name: " << last_name << std::endl;
-	std::cout << "Nickname: " << nickname << std::endl;
-	std::cout << "Phone number: " << phone_number << std::endl;
-	std::cout << "Darkest secret: " << darkest_secret << std::endl;
 	return;
 }
 
 Contact::~Contact( void )
-{	
-	std::cout << "Contact destructor called" << std::endl;
+{
 	return;
 }
 
