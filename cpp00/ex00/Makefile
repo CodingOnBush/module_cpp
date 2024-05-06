@@ -6,11 +6,11 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/05 20:17:18 by momrane           #+#    #+#              #
-#    Updated: 2024/05/05 20:30:02 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/06 09:44:24 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	ex00
+NAME	:=	megaphone
 
 CPP		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
