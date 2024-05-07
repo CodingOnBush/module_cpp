@@ -2,23 +2,34 @@
 # define CONTACT_CLASS_H
 # include <iostream>
 
-class Contact {
-public:
+class Contact
+{
+	public:
+		Contact( void );
+		~Contact( void );
 
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+		void		setIndex( int index );
+		void		setFirstName( std::string first_name );
+		void		setLastName( std::string last_name );
+		void		setNickname( std::string nickname );
+		void		setPhoneNumber( std::string phone_number );
+		void		setDarkestSecret( std::string darkest_secret );
+		int			getIndex( void );
+		std::string	getFirstName( void );
+		std::string	getLastName( void );
+		std::string	getNickname( void );
+		void		initNewContact_( void );
 
-	Contact(
-		std::string first_name,
-		std::string last_name,
-		std::string nickname,
-		std::string phone_number,
-		std::string darkest_secret
-	);
-	~Contact( void );
+	private:
+		int			index_;
+		std::string	first_name_;
+		std::string	last_name_;
+		std::string	nickname_;
+		std::string	phone_number_;
+		std::string	darkest_secret_;
+
+		std::string	getInput_( std::string msg );
+		std::string	getInputNumber_( std::string msg );
 };
 
 #endif
