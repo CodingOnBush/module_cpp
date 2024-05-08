@@ -1,16 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 20:21:46 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/06 18:35:40 by allblue          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
+
+static void	printToUpperCase(char *str)
+{
+	char	up;
+	int		i;
+
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
+	{
+		up = toupper(str[i]);
+		std::cout << up;
+		i++;
+	}
+}
 
 static void	megaphone(int ac, char **av)
 {
@@ -18,19 +22,15 @@ static void	megaphone(int ac, char **av)
 
 	i = 1;
 	while (i < ac)
-	{
-		for (int j = 0; av[i][j] != '\0'; j++)
-			std::cout << (char)toupper(av[i][j]);
-		i++;
-	}
-	std::cout << std::endl;
+		printToUpperCase(av[i++]);
 }
 
 int	main(int ac, char **av)
 {
 	if (ac <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 		megaphone(ac, av);
+	std::cout << std::endl;
 	return (0);
 }
