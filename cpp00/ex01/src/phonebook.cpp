@@ -2,8 +2,8 @@
 
 int	main(void)
 {
-	PhoneBook	phoneBook;
+	PhoneBook	app;
 
-	phoneBook.launchApp();
+	app.launchApp();
 	return (0);
 }

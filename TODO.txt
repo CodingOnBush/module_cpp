@@ -1,0 +1,20 @@
+# module cpp
+
+### todo
+- check cpp00 avec valgrind
+- demander si iostream et iomanip sont des bibliothèques externes parce que c'est pas autorisé dans la correction
+"L'utilisation d'une bibliothèque externe, ou de fonctionnalités propres aux versions postérieures à C++98."
+- check le pblm dans le phonebook.hpp ex01
+- ajouter les header42
+- faire en sorte d'avoir les fichier .d c'est pratique
+
+Retour de dhubleur (Damien) sur mes class :
+Compliqué à dire comme ça faudrait voir l implémentation mais ce que je vois c est
+- il manque des includes. Genre <string>
+- en général on prefix les trucs privés par _ et pas postfix
+- pour moi ta classe contact devrait pas stocker son index, dans l idée ça ne fait pas sens dans le contexte d un contact de savoir son index. Ça fait sens uniquement dans le cadre du phonebook ou il est avec d autres contacts. C est de la semantique pas trop grave mais c est important comme concept de se poser la question: cette variable a t elle réellement du sens a être dans cette classe, est elle réellement reliée à cette classe ?
+- toujours sur cette variable index, elle est en public alors que t as aussi un accesseur (updateIndex). Soit tu mets la variable en privé et tu fais des accesseurs soit tu la mets en public et ducoup ps d accesseurs mais pas un mélange des 2
+- difficile à dire sans contexte mais initNewContact fait penser à un constructeur, je vois pas bien pourquoi elle existe mais je l appellerai plutôt fillContact ou quelque chose comme ça
+Globalement tu semble avoir bien compris les concepts de base en tout cas
+
+tellement reconnaissant !
