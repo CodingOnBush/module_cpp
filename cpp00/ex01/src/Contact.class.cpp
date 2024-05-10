@@ -1,49 +1,24 @@
-#include "../inc/phonebook.hpp"
+#include "../inc/ex01.hpp"
 
 Contact::Contact(void)
 {
-	this->index = -1;
-	this->firstName_ = "";
-	this->lastName_ = "";
-	this->nickname_ = "";
-	this->phoneNumber_ = "";
-	this->darkestSecret_ = "";
+	this->_firstName = "";
+	this->_lastName = "";
+	this->_nickname = "";
+	this->_phoneNumber = "";
+	this->_darkestSecret = "";
 	return;
 }
 
 Contact::~Contact(void)
 {
-	return;
 }
 
-void	Contact::updateIndex( int index )
-{
-	this->index = index;
-	return ;
-}
-
-void	Contact::initNewContact_(void)
-{
-	std::string	input;
-
-	if (!std::cin.eof())
-		this->firstName_ = getInput_("Enter first name: ");
-	if (!std::cin.eof())
-		this->lastName_ = getInput_("Enter last name: ");
-	if (!std::cin.eof())
-		this->nickname_ = getInput_("Enter nickname: ");
-	if (!std::cin.eof())
-		this->phoneNumber_ = getInputNumber_("Enter phone number: ");
-	if (!std::cin.eof())
-		this->darkestSecret_ = getInput_("Enter darkest secret: ");
-	return ;
-}
-
-std::string	Contact::getInput_( std::string msg )
+static std::string	getInputStr_( std::string msg )
 {
 	std::string	input = "";
 
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout << msg;
 		std::getline(std::cin, input);
@@ -52,9 +27,7 @@ std::string	Contact::getInput_( std::string msg )
 			std::cout << std::endl;
 			break;
 		}
-		if (input.empty())
-			continue;
-		else
+		if (!input.empty())
 			break;
 	}
 	return (input);
@@ -74,11 +47,11 @@ static int	isValidPhoneNumber(std::string input)
 	return (1);
 }
 
-std::string	Contact::getInputNumber_( std::string msg )
+static std::string	getInputNumber_( std::string msg )
 {
 	std::string	input = "";
 
-	while (1)
+	while (!std::cin.eof())
 	{
 		input = "";
 		std::cout << msg;
@@ -97,39 +70,38 @@ std::string	Contact::getInputNumber_( std::string msg )
 	return (input);
 }
 
-void	Contact::printLineContact(void)
+static void	printInsideColumn(std::string str)
 {
-	if (this->index == -1)
-		return ;
-	std::cout << boldyellow << "|" << reset;
-	std::cout << std::setw(10) << (this->index + 1) << "|";
-	if (this->firstName_.length() > 10)
-		std::cout << this->firstName_.substr(0, 9) << ".|";
+	if (str.length() > 10)
+		std::cout << str.substr(0, 9) << boldyellow << ".║" << reset;
 	else
-		std::cout << std::setw(10) << this->firstName_ << "|";
-	if (this->lastName_.length() > 10)
-		std::cout << this->lastName_.substr(0, 9) << ".|";
-	else
-		std::cout << std::setw(10) << this->lastName_ << "|";
-	if (this->nickname_.length() > 10)
-		std::cout << this->nickname_.substr(0, 9) << ".|";
-	else
-		std::cout << std::setw(10) << this->nickname_ << boldyellow << "|" << reset;
+		std::cout << std::setw(10) << str << boldyellow << "║" << reset;
+}
+
+void	Contact::fillContact(void)
+{
+	this->_firstName = getInputStr_("Enter your first name     : ");
+	this->_lastName = getInputStr_("Enter your last name      : ");
+	this->_nickname = getInputStr_("Enter your nickname       : ");
+	this->_phoneNumber = getInputNumber_("Enter your phone number   : ");
+	this->_darkestSecret = getInputStr_("Enter your darkest secret : ");
 	return ;
 }
 
-void	Contact::printFullInfos(void)
+void	Contact::printLineContact(void) const
 {
-	if (this->index == -1)
-	{
-		std::cout << red << "This contact doesn't exist 😖" << reset << std::endl;
-		return ;
-	}
-	std::cout << green << "=============== [CONTACT nº" << (this->index + 1) << "] ===============" << reset << std::endl;
-	std::cout << green << "First name: \t" << this->firstName_ << reset << std::endl;
-	std::cout << green << "Last name: \t" << this->lastName_ << reset << std::endl;
-	std::cout << green << "Nickname: \t" << this->nickname_ << reset << std::endl;
-	std::cout << green << "Phone number: \t" << this->phoneNumber_ << reset << std::endl;
-	std::cout << green << "Darkest secret:" << std::endl << this->darkestSecret_ << reset << std::endl;
+	printInsideColumn(this->_firstName);
+	printInsideColumn(this->_lastName);
+	printInsideColumn(this->_nickname);
+	return ;
+}
+
+void	Contact::printFullInfos(void) const
+{
+	std::cout << green << "First name     : " << this->_firstName << reset << std::endl;
+	std::cout << green << "Last name      : " << this->_lastName << reset << std::endl;
+	std::cout << green << "Nickname       : " << this->_nickname << reset << std::endl;
+	std::cout << green << "Phone number   : " << this->_phoneNumber << reset << std::endl;
+	std::cout << green << "Darkest secret : " << this->_darkestSecret << reset << std::endl;
 	return ;
 }

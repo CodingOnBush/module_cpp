@@ -1,34 +1,33 @@
-#include "../inc/phonebook.hpp"
+#include "../inc/ex01.hpp"
 
 static void	welcome(void)
 {
-	// std::string	msg = "Welcome in this awesome Phone Book 🌸";
-	std::cout << boldyellow << "╔===========================================╗" << reset << std::endl;
+	std::cout << boldyellow << "╔═══════════════════════════════════════════╗" << reset << std::endl;
 	std::cout << boldyellow << "║   Welcome in this awesome Phone Book 🌸   ║" << reset << std::endl;
-	std::cout << boldyellow << "╚===========================================╝" << reset << std::endl;
+	std::cout << boldyellow << "╚═══════════════════════════════════════════╝" << reset << std::endl;
 	return ;
 }
 
 static void	goodbye(void)
 {
-	std::string	msg = "============== GOODBYE 👋👋👋 ===============";
+	std::string	msg = "══════════════ GOODBYE 👋👋👋 ═══════════════";
 	std::cout << boldyellow << msg << reset << std::endl;
 	return ;
 }
 
 static void	printUsage(void)
 {
-	std::cout << "╔=========== Commands available ============╗" << reset << std::endl;
+	std::cout << "╔═══════════ Commands available ════════════╗" << reset << std::endl;
 	std::cout << "║ ADD    : Add a new contact                ║" << reset << std::endl;
 	std::cout << "║ SEARCH : Search a contact                 ║" << reset << std::endl;
 	std::cout << "║ EXIT   : Exit the Phone Book              ║" << reset << std::endl;
-	std::cout << "╚===========================================╝" << reset << std::endl;
+	std::cout << "╚═══════════════════════════════════════════╝" << reset << std::endl;
 	return ;
 }
 
 PhoneBook::PhoneBook(void)
 {
-	this->added_ = 0;
+	this->_added = 0;
 	return ;
 }
 
@@ -37,45 +36,46 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::printPhoneBook_(void)
+void	PhoneBook::_printPhoneBook(void)
 {
-	bool	emptyList = true;
-	std::cout << boldyellow << "╔============ YOUR PHONE BOOK ! ============╗" << reset << std::endl;
+	std::cout << boldyellow << "╔══════════╦═ YOUR PHONE BOOK ! ═╦══════════╗" << reset << std::endl;
+	std::cout << boldyellow << "║   index  ║firstname ║ lastname ║ nickname ║" << reset << std::endl;
+	std::cout << boldyellow << "╠══════════╬══════════╬══════════╬══════════╣" << reset << std::endl;
 	for (size_t i = 0; i < 8; i++)
 	{
-		this->contacts_[i].printLineContact();
-		if (this->contacts_[i].index != -1)
+		if (this->_added % 8 == (int)i && this->_added != 0)
 		{
-			emptyList = false;
+			std::cout << boldyellow << "║" << reset;
+			std::cout << std::setw(10) << i << boldyellow << "║" << reset;
+			this->_contacts[i - 1].printLineContact();
 			std::cout << std::endl;
 		}
 	}
-	if (emptyList)
+	if (this->_added == 0)
 		std::cout << "          The Phone Book is empty.           " << std::endl;
-	std::cout << boldyellow << "╚===========================================╝" << reset << std::endl;
+	std::cout << boldyellow << "╚══════════╩══════════╩══════════╩══════════╝" << reset << std::endl;
 	return ;
 }
 
-void	PhoneBook::addContact_(void)
+void	PhoneBook::_addContact(void)
 {
 	int	index;
 
-	std::cout << boldblue << "========== Adding a new contact... ==========" << reset << std::endl;
-	index = this->added_ % 8;
-	this->added_++;
-	this->contacts_[index].initNewContact_();
-	this->contacts_[index].updateIndex(index);
-	std::cout << boldblue << "=============================================" << reset << std::endl;
+	std::cout << boldblue << "══════════ Adding a new contact... ══════════" << reset << std::endl;
+	index = this->_added % 8;
+	this->_added++;
+	this->_contacts[index].fillContact();
+	std::cout << boldblue << "═════════════════════════════════════════════" << reset << std::endl;
 	return ;
 }
 
-void	PhoneBook::seachContact_(void)
+void	PhoneBook::_searchContact(void)
 {
 	std::string	input = "";
 	int			index;
 
-	printPhoneBook_();
-	std::cout << boldblue << "========= Searching a new contact... ========" << reset << std::endl;
+	_printPhoneBook();
+	std::cout << boldblue << "═════════ Searching a new contact... ════════" << reset << std::endl;
 	while (1)
 	{
 		std::cout << "Enter the index you want to seach :";
@@ -95,8 +95,16 @@ void	PhoneBook::seachContact_(void)
 			break;
 	}
 	if (index >= 0 && index <= 8)
-		this->contacts_[index - 1].printFullInfos();
-	std::cout << boldblue << "=============================================" << reset << std::endl;
+	{
+		if (this->_added % 8 != index)
+			std::cout << red << "This contact doesn't exist 😖" << reset << std::endl;
+		else
+		{
+			std::cout << green << "═══════════════ [CONTACT nº" << index << "] ═══════════════" << reset << std::endl;
+			this->_contacts[index - 1].printFullInfos();
+		}
+	}
+	std::cout << boldblue << "═════════════════════════════════════════════" << reset << std::endl;
 }
 
 void	PhoneBook::launchApp(void)
@@ -115,9 +123,9 @@ void	PhoneBook::launchApp(void)
 			break;
 		}
 		else if (!input.compare("ADD"))
-			this->addContact_();
+			this->_addContact();
 		else if (!input.compare("SEARCH"))
-			this->seachContact_();
+			this->_searchContact();
 		else if (!input.empty())
 		{
 			std::cout << red << "Please enter a valid command 😊" << reset << std::endl;
