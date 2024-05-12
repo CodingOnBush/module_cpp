@@ -84,3 +84,15 @@ Ainsi, ce programme réplique le comportement d'un shell en C++, attendant en pe
 
 
 ============================================================================================================================================================================================================================================================================================================
+
+
+Attention ce passage:
+Vous devez pouvoir utiliser vos fichiers d’en-tête séparément les uns des autres.
+C’est pourquoi ils devront inclure toutes les dépendances qui leur seront nécessaires. Cependant, vous devez éviter le problème de la double inclusion en les
+protégeant avec des include guards. Dans le cas contraire, votre note sera de 0
+
+
+Comprendre ceci:
+• Une fonction implémentée dans un fichier d’en-tête (hormis dans le cas de fonction
+template) équivaudra à la note de 0.
+
