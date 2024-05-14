@@ -1,10 +1,7 @@
-#ifndef EX01_H
-# define EX01_H
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-# include <iostream>
-# include <iomanip>
 # include "Contact.hpp"
-# include "PhoneBook.hpp"
 
 # define reset "\033[0m"
 # define red "\033[31m"
@@ -15,8 +12,19 @@
 # define boldblue "\033[1m\033[34m"
 # define boldyellow "\033[1m\033[33m"
 
-#endif
+class PhoneBook
+{
+	private:
+		Contact	_contacts[8];
+		int		_added;
+		void	_printPhoneBook(void);
+		void	_addContact(void);
+		void	_searchContact(void);
+	
+	public:
+		PhoneBook();
+		~PhoneBook();
+		void	launchApp(void);
+};
 
-/*
-why if I move the define to the top of the file, it doesn't work?
-*/
+#endif

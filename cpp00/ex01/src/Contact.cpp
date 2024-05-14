@@ -1,4 +1,7 @@
-#include "../inc/ex01.hpp"
+#include "../inc/Contact.hpp" 
+#include <iostream>
+#include <iomanip>
+#include <string>
 
 Contact::Contact(void)
 {

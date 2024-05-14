@@ -8,7 +8,7 @@ SRC_DIR	:=	./src
 BIN_DIR	:=	./bin
 DEP_DIR	:=	./dep
 
-SRC		:=	$(SRC_DIR)/phonebook.cpp \
+SRC		:=	$(SRC_DIR)/main.cpp \
 			$(SRC_DIR)/Contact.cpp \
 			$(SRC_DIR)/PhoneBook.cpp
 
