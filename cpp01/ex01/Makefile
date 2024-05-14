@@ -8,9 +8,8 @@ SRC_DIR	:=	.
 BIN_DIR	:=	./bin
 
 SRC		:=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/newZombie.cpp \
-			$(SRC_DIR)/randomChump.cpp \
-			$(SRC_DIR)/Zombie.cpp
+			$(SRC_DIR)/Zombie.cpp \
+			$(SRC_DIR)/zombieHorde.cpp \
 
 OBJ		:=	$(SRC:$(SRC_DIR)/%.cpp=$(BIN_DIR)/%.o)
 
