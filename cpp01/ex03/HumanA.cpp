@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 14:06:30 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/14 14:06:31 by momrane          ###   ########.fr       */
+/*   Created: 2024/05/15 11:43:18 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/15 13:52:52 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
 #include <iostream>
+#include <string>
 
-static void	printToUpperCase(char *str)
+HumanA::HumanA(std::string name, Weapon& weapon) :
+	name_(name),
+	weapon_(weapon)
 {
-	char	up;
-	int		i;
-
-	i = 0;
-	if (!str)
-		return ;
-	while (str[i])
-	{
-		up = toupper(str[i]);
-		std::cout << up;
-		i++;
-	}
 }
 
-static void	megaphone(int ac, char **av)
+HumanA::~HumanA(void)
 {
-	int	i;
-
-	i = 1;
-	while (i < ac)
-		printToUpperCase(av[i++]);
 }
 
-int	main(int ac, char **av)
+void HumanA::attack(void)
 {
-	if (ac <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		megaphone(ac, av);
-	std::cout << std::endl;
-	return (0);
+	std::cout
+		<< this->name_ 
+		<< " attacks with their " 
+		<< this->weapon_.getType()
+	<< std::endl;
 }

@@ -1,9 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 14:19:52 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/14 14:23:06 by momrane          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
-#include <iomanip>
-
-// Définition de la class ici
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -42,7 +51,6 @@ void	Account::displayAccountsInfos( void )
 	return ;
 }
 
-// [19920104_091532] index:7;amount:16576;created
 Account::Account( int initial_deposit )
 {
 	this->_accountIndex = getNbAccounts();
@@ -138,7 +146,7 @@ void	Account::_displayTimestamp( void )
 	std::time_t	t;
 	char 		mbstr[100];
 
-	t = std::time(nullptr);
+	t = std::time(0);
 	std::strftime(mbstr, sizeof(mbstr), "[%Y%m%d_%H%M%S] ", std::localtime(&t));
 	std::cout << mbstr;
 	return ;

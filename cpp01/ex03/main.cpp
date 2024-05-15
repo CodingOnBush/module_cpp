@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 14:06:30 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/14 14:06:31 by momrane          ###   ########.fr       */
+/*   Created: 2024/05/15 10:19:08 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/15 13:51:03 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include <iostream>
 
-static void	printToUpperCase(char *str)
+int	main(void)
 {
-	char	up;
-	int		i;
-
-	i = 0;
-	if (!str)
-		return ;
-	while (str[i])
 	{
-		up = toupper(str[i]);
-		std::cout << up;
-		i++;
+		Weapon club = Weapon("crude spiked club");
+		
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-}
-
-static void	megaphone(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	while (i < ac)
-		printToUpperCase(av[i++]);
-}
-
-int	main(int ac, char **av)
-{
-	if (ac <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		megaphone(ac, av);
-	std::cout << std::endl;
+	{
+		Weapon club = Weapon("crude spiked club");
+		
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }

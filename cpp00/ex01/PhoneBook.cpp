@@ -1,4 +1,16 @@
-#include "../inc/PhoneBook.hpp" 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 14:06:11 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/14 14:26:39 by momrane          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./PhoneBook.hpp" 
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -48,12 +60,10 @@ void	PhoneBook::_printPhoneBook(void)
 	{
 		if (this->_added == 0)
 			break ;
-		std::cout << "this added : " << this->_added << std::endl;
-		std::cout << "this added % 8 : " << this->_added % 8 << std::endl;
-		
-
+		if (this->_added < 8 && i >= (this->_added % 8))
+			break ;
 		std::cout << boldyellow << "║" << reset;
-		std::cout << std::setw(10) << i << boldyellow << "║" << reset;
+		std::cout << std::setw(10) << std::right << (i + 1) << boldyellow << "║" << reset;
 		this->_contacts[i].printLineContact();
 		std::cout << std::endl;
 	}
@@ -68,10 +78,9 @@ void	PhoneBook::_addContact(void)
 	int	index;
 
 	std::cout << boldblue << "══════════ Adding a new contact... ══════════" << reset << std::endl;
-	std::cout << "this added : " << this->_added << std::endl;
-	index = (this->_added + 1) % 8;
+	index = this->_added % 8;
 	this->_added++;
-	this->_contacts[index - 1].fillContact();
+	this->_contacts[index].fillContact();
 	std::cout << boldblue << "═════════════════════════════════════════════" << reset << std::endl;
 	std::cout << boldgreen << "A new contact has been added successfully 🎉" << reset << std::endl;
 	return ;
@@ -110,13 +119,13 @@ void	PhoneBook::_searchContact(void)
 			break;
 		std::cout << boldred << "Please entre a single number between 1 and 8" << reset << std::endl;
 	}
-	if (this->_added % 8 != index)
-		std::cout << red << "This contact doesn't exist 😖" << reset << std::endl;
-	else
+	if (index <= (this->_added % 8) || this->_added >= 8)
 	{
 		std::cout << green << "═══════════════ [CONTACT nº" << index << "] ═══════════════" << reset << std::endl;
 		this->_contacts[index - 1].printFullInfos();
 	}
+	else
+		std::cout << red << "This contact doesn't exist 😖" << reset << std::endl;
 	std::cout << boldblue << "═════════════════════════════════════════════" << reset << std::endl;
 }
 

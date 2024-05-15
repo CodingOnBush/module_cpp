@@ -1,48 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 14:06:30 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/14 14:06:31 by momrane          ###   ########.fr       */
+/*   Created: 2024/05/15 13:55:50 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/15 17:20:20 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include "colors.h"
 
-static void	printToUpperCase(char *str)
+void	replace(std::string *filename, std::string *s1, std::string *s2)
 {
-	char	up;
-	int		i;
-
-	i = 0;
-	if (!str)
-		return ;
-	while (str[i])
-	{
-		up = toupper(str[i]);
-		std::cout << up;
-		i++;
-	}
-}
-
-static void	megaphone(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	while (i < ac)
-		printToUpperCase(av[i++]);
+	(void)filename;
+	(void)s1;
+	(void)s2;
 }
 
 int	main(int ac, char **av)
 {
-	if (ac <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		megaphone(ac, av);
-	std::cout << std::endl;
+	if (ac != 4)
+		return (P(RED, "Usage: ./a.out <filename> <str1> <str2>"), 1);
+	replace(av[1], av[2], av[3]);
 	return (0);
 }

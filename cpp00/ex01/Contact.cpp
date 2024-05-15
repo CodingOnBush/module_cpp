@@ -1,4 +1,16 @@
-#include "../inc/Contact.hpp" 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 14:06:18 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/14 14:26:31 by momrane          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./Contact.hpp" 
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -76,9 +88,9 @@ static std::string	getInputNumber_( std::string msg )
 static void	printInsideColumn(std::string str)
 {
 	if (str.length() > 10)
-		std::cout << str.substr(0, 9) << boldyellow << ".║" << reset;
+		std::cout << std::right << str.substr(0, 9) << boldyellow << ".║" << reset;
 	else
-		std::cout << std::setw(10) << str << boldyellow << "║" << reset;
+		std::cout << std::setw(10) << std::right << str << boldyellow << "║" << reset;
 }
 
 void	Contact::fillContact(void)

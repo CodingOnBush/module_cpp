@@ -1,15 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 17:05:16 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/14 17:05:17 by momrane          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 #include <string>
 
 Zombie*	zombieHorde( int N, std::string name )
 {
-	Zombie	*horde = new Zombie[N];
+	Zombie	*horde;
 
 	if (N <= 0)
-		return (nullptr);
+		return (NULL);
+	horde = new Zombie[N];
 	if (!horde)
-		return (nullptr);
-	for (int i = 0; i < N; i++)
-		horde[i].setName(name);
+		return (NULL);
+	while (N--)
+		horde[N].setName(name);
 	return (horde);
 }
