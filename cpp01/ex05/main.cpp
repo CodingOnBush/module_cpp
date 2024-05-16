@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.h                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 17:12:02 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/16 11:57:19 by momrane          ###   ########.fr       */
+/*   Created: 2024/05/15 13:55:50 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/16 11:59:10 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLORS_H
-# define COLORS_H
+#include "colors.h"
+#include <iostream>
 
-# define RED "\033[1;31m"
-# define GREEN "\033[1;32m"
-# define RESET "\033[0m"
-
-#endif
+int	main(void)
+{
+	std::cout << "Hi !" << std::endl;
+	return (0);
+}

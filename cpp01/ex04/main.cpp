@@ -6,25 +6,22 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:55:50 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 17:20:20 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 11:56:48 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "colors.h"
-
-void	replace(std::string *filename, std::string *s1, std::string *s2)
-{
-	(void)filename;
-	(void)s1;
-	(void)s2;
-}
+#include "sed.h"
 
 int	main(int ac, char **av)
 {
 	if (ac != 4)
-		return (P(RED, "Usage: ./a.out <filename> <str1> <str2>"), 1);
-	replace(av[1], av[2], av[3]);
-	return (0);
+	{
+		std::cout << RED << "Usage: ./a.out <filename> <str1> <str2>" << RESET << std::endl;
+		return (1);
+	}
+	std::string	filename(av[1]);
+	std::string	s1(av[2]);
+	std::string	s2(av[3]);
+	std::string	outfile = filename + ".replace";
+	return (sed(filename, s1, s2, outfile));
 }

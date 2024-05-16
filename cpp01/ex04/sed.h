@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.h                                           :+:      :+:    :+:   */
+/*   sed.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 17:12:02 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/16 11:57:19 by momrane          ###   ########.fr       */
+/*   Created: 2024/05/16 10:14:03 by momrane           #+#    #+#             */
+/*   Updated: 2024/05/16 10:22:28 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLORS_H
-# define COLORS_H
+#ifndef SED_H
+# define SED_H
 
-# define RED "\033[1;31m"
-# define GREEN "\033[1;32m"
-# define RESET "\033[0m"
+# include <iostream>
+# include <string>
+# include <fstream>
+# include "colors.h"
+
+std::string	replace(std::string line, std::string s1, std::string s2);
+int			sed(std::string filename, std::string s1, std::string s2, std::string outfile);
 
 #endif
