@@ -6,11 +6,11 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/15 13:55:20 by momrane           #+#    #+#              #
-#    Updated: 2024/05/16 13:06:54 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/16 16:58:54 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	exec
+NAME	:=	Harl
 
 CPP		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror -std=c++98

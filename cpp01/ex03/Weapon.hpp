@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:13:50 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:19:56 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:35:28 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Weapon
 	public:
 		Weapon(std::string type);
 		~Weapon(void);
-		std::string		getType(void) const;
-		void			setType(std::string type);
+		const std::string&	getType(void);
+		void				setType(std::string newOne);
 };
 
 #endif

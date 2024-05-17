@@ -6,11 +6,11 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 17:05:08 by momrane           #+#    #+#              #
-#    Updated: 2024/05/14 17:05:09 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/16 17:22:04 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	zombie
+NAME	:=	horde
 
 CPP		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror -std=c++98

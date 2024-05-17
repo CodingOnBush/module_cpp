@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 07:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:52:17 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:34:10 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define HUMANB_HPP
 
 # include "Weapon.hpp"
+# include <iostream>
 # include <string>
 
 class HumanB

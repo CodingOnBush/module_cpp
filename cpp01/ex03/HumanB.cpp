@@ -6,13 +6,11 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 07:59:55 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:52:12 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:33:40 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include <string>
-#include <iostream>
 
 HumanB::HumanB(std::string name) : 
 	name_(name),

@@ -6,13 +6,13 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:14:35 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/16 11:55:53 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:52:45 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.h"
 
-std::string	replace(std::string line, std::string s1, std::string s2)
+std::string	myReplace(std::string line, std::string s1, std::string s2)
 {
 	std::string	newline;
 	size_t		pos = 0;
@@ -45,11 +45,17 @@ int	sed(std::string filename, std::string s1, std::string s2, std::string outfil
 	out.open(outfile.c_str());
 	if (!out.is_open())
 		return ((std::cerr << RED << "Error: failed to open or create [" << outfile << "]" << RESET << std::endl), 1);
-	while (std::getline(in, buf))
+	std::getline(in, buf);
+	if (buf.empty() && in.eof())
+		return ((std::cerr << RED << "Error: This file [" << filename << "] is empty" << RESET << std::endl), 1);
+	do
 	{
-		replaced = replace(buf, s1, s2);
-		out << replaced << std::endl;
+		replaced = myReplace(buf, s1, s2);
+		out << replaced;
+		if (!in.eof())
+			out << std::endl;
 	}
+	while (std::getline(in, buf));
 	in.close();
 	out.close();
 	return ((std::cout << GREEN << outfile << " created successfully !" << RESET << std::endl), 0);

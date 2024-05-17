@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 07:54:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:51:47 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:34:05 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Weapon.hpp"
 # include <string>
+# include <iostream>
 
 class HumanA
 {

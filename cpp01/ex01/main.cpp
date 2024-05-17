@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:05:02 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/14 17:05:04 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:15:35 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main(void)
 {
 	Zombie*	horde;
-	int		horde_size = 100;
+	int		horde_size = 3;
 
 	std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
 	std::cout << "║ Let's create a horde of Zombie.           ║" << std::endl;

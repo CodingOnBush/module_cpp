@@ -6,11 +6,11 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/15 13:55:20 by momrane           #+#    #+#              #
-#    Updated: 2024/05/16 10:18:07 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/16 17:08:01 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	exec
+NAME	:=	sed
 
 CPP		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror -std=c++98

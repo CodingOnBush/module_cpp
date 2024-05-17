@@ -6,12 +6,13 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:19:08 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:51:03 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:35:20 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 #include <iostream>
 
 int	main(void)

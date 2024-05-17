@@ -6,13 +6,11 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:43:18 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/15 13:52:52 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/16 17:34:33 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
-#include <iostream>
-#include <string>
 
 HumanA::HumanA(std::string name, Weapon& weapon) :
 	name_(name),
