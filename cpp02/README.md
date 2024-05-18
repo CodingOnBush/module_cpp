@@ -286,3 +286,70 @@ Pour 0.75, on va allumer les interrupteurs suivants :\
 # la partie fractionnaire maximum qu'on peut atteindre avec 8 bits :
 1111 1111 = 0.99609375
 ```
+
+On va parler du constructeur Fixed(const float f) qui va nous permettre de convertir un float en virgule fixe.\
+```cpp
+Fixed::Fixed(const float f)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->value_ = roundf(f * (1 << this->fractionalBits_));
+}
+```
+Pour convertir un float en virgule fixe, on va multiplier le float par 2^8 (1 << 8) pour avoir la partie fractionnaire.\
+Si je prends 42.75, je vais multiplier 42.75 par 256 (2^8) pour avoir 42.75 en virgule fixe.\
+```bash
+42.75 * 256 = 10944
+```
+10944 c'est 42.75 en virgule fixe.\
+La partie entière est 42 et la partie fractionnaire est 0.75.\
+En binaire, 42 c'est 101010 et pour convertir 0.75 en binaire, on va multiplier 0.75 par 2^8.\
+```bash
+0.75 * 256 = 192
+```
+En binaire, 192 c'est 11000000.\
+On a donc 101010.11000000 qui est 42.75 en virgule fixe.\
+On combine la partie entière et la partie fractionnaire pour avoir le nombre en virgule fixe.\
+```bash
+101010.11000000 -> 42.75
+```
+Le nombre 42.75 en virgule fixe avec 8 bits pour la partie fractionnaire est représenté par le nombre binaire 0010101011000000.\
+Pour vérifier que 42.75 en virgule fixe est bien 0010101011000000, on peut convertir 0010101011000000 en base 10.\
+```bash
+00101010 -> 42
+11000000 -> 192 en base 10 et donc 192 / 2^8 = 0.75
+```
+
+### incrémentation et décrémentation
+
+**Pré-incrémentation (++variable)**\
+L’opérateur de pré-incrémentation augmente la valeur de la variable avant que l’expression ne soit évaluée.
+```cpp
+float epsilon = 0.000001f; // ε très petit
+float valeur = 1.0f;
+++valeur; // valeur devient 1.000001
+```
+
+**Post-incrémentation (variable++)**\
+L’opérateur de post-incrémentation augmente la valeur de la variable après que l’expression ne soit évaluée.
+```cpp
+float epsilon = 0.000001f; // ε très petit
+float valeur = 1.0f;
+valeur++; // valeur reste 1.0 pour l'évaluation, puis devient 1.000001
+```
+
+**Pré-décrémentation (--variable)**\
+L’opérateur de pré-décrémentation diminue la valeur de la variable avant que l’expression ne soit évaluée.
+```cpp
+float epsilon = 0.000001f; // ε très petit
+float valeur = 1.0f;
+--valeur; // valeur devient 0.999999
+```
+
+**Post-décrémentation (variable--)**\
+L’opérateur de post-décrémentation diminue la valeur de la variable après que l’expression ne soit évaluée.
+```cpp
+float epsilon = 0.000001f; // ε très petit
+float valeur = 1.0f;
+valeur--; // valeur reste 1.0 pour l'évaluation, puis devient 0.999999
+```
+
