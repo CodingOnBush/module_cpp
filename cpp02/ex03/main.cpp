@@ -6,11 +6,12 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/18 20:55:04 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/19 16:32:22 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 static void	printTitle( std::string title, int width )
 {
@@ -164,6 +165,24 @@ static void	testFromSubject( void )
 	std::cout << Fixed::max( a, b ) << std::endl;
 }
 
+static void	testBSP( void )
+{
+	Point	a( 0.0f, 0.0f );
+	Point	b( 10.0f, 0.0f );
+	Point	c( 0.0f, 10.0f );
+	Point	point( 5.0f, 5.0f );
+
+	printTitle("BSP", 42);
+
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "c = " << c << std::endl;
+	std::cout << "point = " << point << std::endl;
+	
+	std::cout << "Let's check if point is inside the triangle abc" << std::endl;
+	std::cout << "bsp( a, b, c, point ) = " << bsp( a, b, c, point ) << std::endl;
+}
+
 int main( void )
 {
 	testFromSubject();	
@@ -171,5 +190,8 @@ int main( void )
 	testArithmeticOperators();
 	testIncrementDecrementOperators();
 	testFindMinMax();
+	
+	testBSP();	
+
 	return (0);
 }

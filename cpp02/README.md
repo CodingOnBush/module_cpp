@@ -5,7 +5,7 @@
 - [Ex02](#ex02)
 
 ### Introduction
-Polymorphisme ad-hoc <=> surcharge de fonctions\
+	 <=> surcharge de fonctions\
 **Definition** : Une fonction est dite surchargée si elle a plusieurs définitions, mais avec des paramètres différents.
 ```
 void	foo(int a)
@@ -280,7 +280,7 @@ Dans cette exemple, on a besoin de 6 bits pour stocker la partie entière et 2 b
 Dans la classe Fixed, on a besoin de 8 bits pour stocker la partie fractionnaire :\
 [░][░][░][░] [░][░][░][░]\
 Pour 0.75, on va allumer les interrupteurs suivants :\
-[█][█][░][░] [░][░][░][░]\
+[█][█][░][░] [░][░][░][░]
 ```bash
 1100 0000 -> 2^(-1) * 1 + 2^(-2) * 1 = 0.75
 # la partie fractionnaire maximum qu'on peut atteindre avec 8 bits :
@@ -353,3 +353,35 @@ float valeur = 1.0f;
 valeur--; // valeur reste 1.0 pour l'évaluation, puis devient 0.999999
 ```
 
+Quand je lis ceci dans le sujet, je suis un peu perdu :\
+**"Les 4 opérateurs d’incrémentation et de décrémentation (pré-incrémentation et post-incrémentation, pré-décrémentation et post-décrémentation) qui diminueront
+la valeur du nombre à virgule fixe d’unité ε tel que 1 + ε > 1. "**\
+
+Dans ce contexte, ε (epsilon) représente le plus petit incrément possible pour le type de nombre à virgule fixe en question. C'est la plus petite quantité par laquelle on peut augmenter ou diminuer la valeur de ce nombre, telle que 1 + ε > 1. Cela garantit que ε est suffisamment petit pour être le plus petit changement perceptible dans la valeur du nombre.
+
+Pour trouver ε, on peut utiliser la formule suivante :\
+```bash
+ε = 1 / (2^fractionalBits_)
+```
+Dans le cas de la classe Fixed, on a besoin de 8 bits pour stocker la partie fractionnaire.\
+```bash
+ε = 1 / (2^8) = 1 / 256 = 0.00390625
+```
+On n'a pas besoin de faire de calculs pour trouver ε quand on va incrémenter ou décrémenter parce que notre fixedPoint est déjà en virgule fixe, ce qui signifie qu'en lui ajoutant ou en lui retirant 1, on va faire en sorte que lorsqu'on affichera le nombre, il sera affiché avec la bonne précision.\
+```cpp
+float	nb = 42.75f;
+Fixed	val(nb);
+
+std::cout << nb << std::endl; // affiche 42.75
+nb++;
+std::cout << nb << std::endl; // affiche 43.75
+
+std::cout << val << std::endl; // affiche 42.75
+val++;
+std::cout << val << std::endl; // affiche 42.7539
+```
+Dans notre l'instance de Fixed (val), le fixedPoint est un int qui sera egal à 42.75 * 256 = 10944.\
+Si on essaye de faire un getRawBits sur val, on va avoir 10944.\
+Si on veut afficher val, on va devoir diviser 10944 par 256 pour avoir 42.75.\
+Si on incrémente val, on va ajouter 1 à 10944 et on va avoir 10945.\
+Si on veut afficher val après l'avoir incrémenté, on va devoir diviser 10945 par 256 pour avoir 42.7539.\
