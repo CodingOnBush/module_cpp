@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/19 16:32:22 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/20 16:43:09 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,16 @@ static void	testComparisonOperators( void )
 
 	printTitle("OPERATEURS DE COMPARAISON", 42);
 	
-	std::cout << "a = " << a << std::endl;
-	std::cout << "b = " << b << std::endl;
-	std::cout << "c = " << c << std::endl;
+	std::cout << "Fixed a( 10.5f )  -> " << a << std::endl;
+	std::cout << "Fixed b( 20.43f ) -> " << b << std::endl;
+	std::cout << "Fixed c( 10.5f )  -> " << c << std::endl << std::endl;
 
-	std::cout << a << " > " << b << "  : " << (a > b) << std::endl;
-	std::cout << a << " < " << b << "  : " << (a < b) << std::endl;
-	std::cout << a << " >= " << b << " : " << (a >= b) << std::endl;
-	std::cout << a << " <= " << b << " : " << (a <= b) << std::endl;
-	std::cout << a << " == " << b << " : " << (a == b) << std::endl;
-	std::cout << a << " != " << b << " : " << (a != b) << std::endl;
-	std::cout << a << " == " << c << " : " << (a == c) << std::endl;
-	std::cout << a << " != " << c << " : " << (a != c) << std::endl;
+	std::cout << a << " > " << b << "  : " << ((a > b) ? "true" : "false") << std::endl;
+	std::cout << a << " < " << b << "  : " << ((a < b) ? "true" : "false") << std::endl;
+	std::cout << a << " >= " << b << " : " << ((a >= b) ? "true" : "false") << std::endl;
+	std::cout << a << " <= " << b << " : " << ((a <= b) ? "true" : "false") << std::endl;
+	std::cout << a << " == " << c << "    : " << ((a == c) ? "true" : "false") << std::endl;
+	std::cout << a << " != " << c << "    : " << ((a != c) ? "true" : "false") << std::endl;
 }
 
 static void	testArithmeticOperators( void )
@@ -61,37 +59,34 @@ static void	testArithmeticOperators( void )
 
 	printTitle("OPERATEURS ARITHMETIQUES", 42);
 
-	std::cout << "a = " << a << std::endl;	
-	std::cout << "b = " << b << std::endl;
-	std::cout << "c = " << c << std::endl;
+	std::cout << "Fixed a( 10 )                -> " << a << std::endl;	
+	std::cout << "Fixed b( 20.123123f )        -> " << b << std::endl;
+	std::cout << "Fixed c( Fixed(42.75f) / a ) -> " << c << std::endl << std::endl;
 
-	std::cout << a << " + " << b << " = " << (a + b) << std::endl;
-	std::cout << b << " - " << a << " = " << (b - a) << std::endl;
-	std::cout << a << " * " << b << " = " << (a * b) << std::endl;
-	std::cout << b << " / " << a << " = " << (b / a) << std::endl;
-	std::cout << a << " + " << c << " = " << (a + c) << std::endl;
-	std::cout << b << " - " << c << " = " << (b - c) << std::endl;
-	std::cout << a << " * " << c << " = " << (a * c) << std::endl;
-	std::cout << b << " / " << c << " = " << (b / c) << std::endl;
+	std::cout << a << "\t+ " << b << "  = " << (a + b) << std::endl;
+	std::cout << b << "\t- " << a << "   \t= " << (b - a) << std::endl;
+	std::cout << a << "\t* " << b << " = " << (a * b) << std::endl;
+	std::cout << b << "\t/ " << a << "   \t= " << (b / a) << std::endl;
+	std::cout << a << "\t+ " << c << "    \t= " << (a + c) << std::endl;
+	std::cout << b << "\t- " << c << "    \t= " << (b - c) << std::endl;
+	std::cout << a << "\t* " << c << "    \t= " << (a * c) << std::endl;
+	std::cout << b << "\t/ " << c << "    \t= " << (b / c) << std::endl;
 }
 
 static void	testIncrementDecrementOperators( void )
 {
-	// Fixed c( Fixed(42.75f) / a );
-
-	printTitle("OPERATEURS D'INCRE/DECREMENTATION", 42);
-	
 	Fixed a( 10 );
 	Fixed b( 10 );
+	Fixed c( 10 );
+	Fixed d( 10 );
+	
+	printTitle("OPERATEURS D'INCRE/DECREMENTATION", 42);
 	
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 
 	std::cout << "a++ < b : " << (a++ < b) << std::endl;
 	std::cout << "a = " << a << std::endl;
-
-	Fixed c( 10 );
-	Fixed d( 10 );
 	
 	std::cout << "c = " << c << std::endl;
 	std::cout << "d = " << d << std::endl;
@@ -104,27 +99,12 @@ static void	testIncrementDecrementOperators( void )
 	std::cout << "a = " << a << std::endl;
 	std::cout << "a++ = " << a++ << std::endl;
 	std::cout << "a = " << a << std::endl;
-	
-	std::cout << "a > b : " << (a > b) << std::endl;
-	std::cout << "a < b : " << (a < b) << std::endl;
-	std::cout << "a >= b : " << (a >= b) << std::endl;
-	std::cout << "a <= b : " << (a <= b) << std::endl;
-	std::cout << "a == b : " << (a == b) << std::endl;
-	std::cout << "a != b : " << (a != b) << std::endl;
-	std::cout << "a == c : " << (a == c) << std::endl;
-	std::cout << "a != c : " << (a != c) << std::endl;
 
 	std::cout << "b = " << b << std::endl;
 	std::cout << "--b = " << --b << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "b-- = " << b-- << std::endl;
 	std::cout << "b = " << b << std::endl;
-	
-	std::cout << "b > c : " << (b > c) << std::endl;
-	std::cout << "b < c : " << (b < c) << std::endl;
-	std::cout << "b >= c : " << (b >= c) << std::endl;
-	std::cout << "b <= c : " << (b <= c) << std::endl;
-	std::cout << "b == c : " << (b == c) << std::endl;
 }
 
 static void	testFindMinMax( void )
@@ -144,25 +124,6 @@ static void	testFindMinMax( void )
 	std::cout << "min( b, c ) = " << Fixed::min( b, c ) << std::endl;
 	std::cout << "max( b, c ) = " << Fixed::max( b, c ) << std::endl;
 	std::cout << "max( b, b ) = " << Fixed::max( b, b ) << std::endl;
-}
-
-static void	testFromSubject( void )
-{
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	printTitle("FROM SUBJECT", 42);
-
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "b\t: " << b << std::endl;
-
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "++a\t: " << ++a << std::endl;
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "a++\t: " << a++ << std::endl;
-	std::cout << "a\t: " << a << std::endl;
-	
-	std::cout << Fixed::max( a, b ) << std::endl;
 }
 
 static void	testBSP( void )
@@ -185,13 +146,10 @@ static void	testBSP( void )
 
 int main( void )
 {
-	testFromSubject();	
 	testComparisonOperators();
 	testArithmeticOperators();
 	testIncrementDecrementOperators();
 	testFindMinMax();
-	
-	testBSP();	
-
+	testBSP();
 	return (0);
 }
