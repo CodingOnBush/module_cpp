@@ -6,11 +6,11 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/20 17:40:44 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/21 09:30:05 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
@@ -20,13 +20,27 @@ int main(void)
 	luffy.attack("Zoro");
 	zoro.takeDamage(0);
 	
-	for (size_t i = 1; i < 15; i++)
+	for (size_t i = 1; i < 6; i++)
 	{
 		luffy.attack("Zoro");
 		zoro.takeDamage(0);
 		if (i % 2 == 0)
 			zoro.beRepaired(1);
 	}
+
+	ScavTrap	nami("Nami");
+	ScavTrap	sanji("Sanji");
+
+	nami.guardGate();
+	sanji.guardGate();
 	
+	for (size_t i = 1; i < 6; i++)
+	{
+		nami.attack(nami.getName());
+		sanji.takeDamage(nami.getAttackDamage());
+		if (i % 2 == 0)
+			sanji.beRepaired(1);
+	}
+
 	return (0);
 }

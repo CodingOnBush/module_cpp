@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/20 17:34:50 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/21 09:30:28 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,29 @@ void ClapTrap::beRepaired(unsigned int amount)
 		<< " be repaired for " << amount << " points!" 
 		<< RESET
 	<< std::endl;
+}
+
+void	ClapTrap::setName(std::string name)
+{
+	this->name_ = name;
+}
+
+void	ClapTrap::setHitpoints(int hitpoints)
+{
+	this->hitpoints_ = hitpoints;
+}
+
+void	ClapTrap::setEnergyPoints(int energyPoints)
+{
+	this->energyPoints_ = energyPoints;
+}
+
+void	ClapTrap::setAttackDamage(int attackDamage)
+{
+	this->attackDamage_ = attackDamage;
+}
+
+int		ClapTrap::getAttackDamage(void) const
+{
+	return (this->attackDamage_);
 }
