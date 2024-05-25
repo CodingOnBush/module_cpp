@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/05/20 16:43:09 by momrane          ###   ########.fr       */
+=======
+/*   Updated: 2024/05/25 18:25:31 by allblue          ###   ########.fr       */
+>>>>>>> newone
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +51,15 @@ static void	testComparisonOperators( void )
 	std::cout << a << " < " << b << "  : " << ((a < b) ? "true" : "false") << std::endl;
 	std::cout << a << " >= " << b << " : " << ((a >= b) ? "true" : "false") << std::endl;
 	std::cout << a << " <= " << b << " : " << ((a <= b) ? "true" : "false") << std::endl;
+<<<<<<< HEAD
 	std::cout << a << " == " << c << "    : " << ((a == c) ? "true" : "false") << std::endl;
 	std::cout << a << " != " << c << "    : " << ((a != c) ? "true" : "false") << std::endl;
+=======
+	std::cout << a << " == " << b << " : " << ((a == b) ? "true" : "false") << std::endl;
+	std::cout << a << " != " << b << " : " << ((a != b) ? "true" : "false") << std::endl;
+	std::cout << a << " == " << c << " : " << ((a == c) ? "true" : "false") << std::endl;
+	std::cout << a << " != " << c << " : " << ((a != c) ? "true" : "false") << std::endl;
+>>>>>>> newone
 }
 
 static void	testArithmeticOperators( void )
@@ -85,13 +96,13 @@ static void	testIncrementDecrementOperators( void )
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 
-	std::cout << "a++ < b : " << (a++ < b) << std::endl;
+	std::cout << "a++ < b : " << ((a++ < b) ? "true" : "false") << std::endl;
 	std::cout << "a = " << a << std::endl;
 	
 	std::cout << "c = " << c << std::endl;
 	std::cout << "d = " << d << std::endl;
 
-	std::cout << "++c < d : " << (c++ < d) << std::endl;
+	std::cout << "++c < d : " << ((c++ < d) ? "true" : "false") << std::endl;
 	std::cout << "c = " << c << std::endl;
 	
 	std::cout << "a = " << a << std::endl;
@@ -99,12 +110,33 @@ static void	testIncrementDecrementOperators( void )
 	std::cout << "a = " << a << std::endl;
 	std::cout << "a++ = " << a++ << std::endl;
 	std::cout << "a = " << a << std::endl;
+<<<<<<< HEAD
+=======
+	
+	std::cout << "a > b : " << ((a > b) ? "true" : "false") << std::endl;
+	std::cout << "a < b : " << ((a < b) ? "true" : "false") << std::endl;
+	std::cout << "a >= b : " << ((a >= b) ? "true" : "false") << std::endl;
+	std::cout << "a <= b : " << ((a <= b) ? "true" : "false") << std::endl;
+	std::cout << "a == b : " << ((a == b) ? "true" : "false") << std::endl;
+	std::cout << "a != b : " << ((a != b) ? "true" : "false") << std::endl;
+	std::cout << "a == c : " << ((a == c) ? "true" : "false") << std::endl;
+	std::cout << "a != c : " << ((a != c) ? "true" : "false") << std::endl;
+>>>>>>> newone
 
 	std::cout << "b = " << b << std::endl;
 	std::cout << "--b = " << --b << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "b-- = " << b-- << std::endl;
 	std::cout << "b = " << b << std::endl;
+<<<<<<< HEAD
+=======
+	
+	std::cout << "b > c : " << ((b > c) ? "true" : "false") << std::endl;
+	std::cout << "b < c : " << ((b < c) ? "true" : "false") << std::endl;
+	std::cout << "b >= c : " << ((b >= c) ? "true" : "false") << std::endl;
+	std::cout << "b <= c : " << ((b <= c) ? "true" : "false") << std::endl;
+	std::cout << "b == c : " << ((b == c) ? "true" : "false") << std::endl;
+>>>>>>> newone
 }
 
 static void	testFindMinMax( void )

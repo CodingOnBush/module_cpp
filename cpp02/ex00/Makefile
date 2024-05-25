@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
+#    By: allblue <allblue@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/22 13:24:34 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/25 19:09:29 by allblue          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	exec
+NAME	:=	fixed
 
 CPP		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror# -std=c++98
