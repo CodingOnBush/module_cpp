@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:57 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/18 15:38:49 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/25 17:43:27 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
 private:
-	int					fixedPoint_;
+	int					rawValue_;
 	static const int	fractionalBits_ = 8;
 
 public:

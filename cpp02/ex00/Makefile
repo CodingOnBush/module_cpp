@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
+#    By: allblue <allblue@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/17 15:49:15 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/25 17:41:59 by allblue          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	exec
+NAME	:=	fixed
 
 CPP		:=	c++
-CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	:=	-Wall -Wextra -Werror# -std=c++98
 
 INC_DIR	:=	.
 SRC_DIR	:=	.
