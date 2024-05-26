@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 18:34:58 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/26 19:32:12 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include <iostream>
 
@@ -21,7 +21,7 @@
 #define BLUE "\033[0;34m"
 #define RESET "\033[0m"
 
-class ClapTrap
+class FragTrap
 {
 	protected:
 		std::string	name_;
@@ -30,12 +30,12 @@ class ClapTrap
 		int			attackDamage_;
 
 	public:
-		ClapTrap( void );								// default constructor
-		ClapTrap( ClapTrap const & obj );				// copy constructor
-		ClapTrap & operator=( ClapTrap const & obj );	// assignation operator
-		~ClapTrap( void );								// destructor
+		FragTrap( void );								// default constructor
+		FragTrap( FragTrap const & obj );				// copy constructor
+		FragTrap & operator=( FragTrap const & obj );	// assignation operator
+		~FragTrap( void );								// destructor
 		
-		ClapTrap( const std::string name );
+		FragTrap( const std::string name );
 		void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
