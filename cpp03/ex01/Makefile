@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
+#    By: allblue <allblue@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/20 16:58:49 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/26 15:16:51 by allblue          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INC_DIR	:=	.
 SRC_DIR	:=	.
 BIN_DIR	:=	./bin
 
-FILES	:=	main ClapTrap
+FILES	:=	main ClapTrap ScavTrap
 SRC		:=	$(addprefix $(SRC_DIR)/, $(addsuffix .cpp, $(FILES)))
 
 OBJ		:=	$(SRC:$(SRC_DIR)/%.cpp=$(BIN_DIR)/%.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/21 09:03:47 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/26 10:16:10 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "ClapTrap default constructor" << std::endl;
+	std::cout << "ClapTrap default constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name) : 
@@ -44,7 +44,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & src)
 ClapTrap::~ClapTrap(void)
 {
 	std::cout
-		<< "ClapTrap (" << this->name_ << ") destructor"
+		<< "ClapTrap (" << this->name_ << ") destructor called."
 	<< std::endl;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/21 09:24:17 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/26 15:46:16 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,62 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout
-		<< "ScavTrap default constructor"
+		<< BLUE
+		<< "SCAV \tdefault constructor"
+		<< RESET
 	<< std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
-	this->setName(name);
-	this->setHitpoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->name_ = name;
+	this->hitpoints_ = 100;
+	this->energyPoints_ = 50;
+	this->attackDamage_ = 20;
 	std::cout
-		<< "ScavTrap "
+		<< BLUE
+		<< "SCAV \t("
 		<< name
-		<< " constructor"
+		<< ") constructor"
+		<< RESET
 	<< std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
+ScavTrap::ScavTrap(ScavTrap const & obj) : ClapTrap(obj)
 {
 	std::cout
-		<< "ScavTrap "
-		<< this->getName()
+		<< BLUE
+		<< "SCAV \t"
+		<< this->name_
 		<< " copy constructor"
+		<< RESET
 	<< std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
 	std::cout
-		<< "ScavTrap "
-		<< this->getName()
-		<< " destructor"
+		<< BLUE
+		<< "SCAV \t("
+		<< this->name_
+		<< ") destructor"
+		<< RESET
 	<< std::endl;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & src)
+ScavTrap & ScavTrap::operator=(ScavTrap const & obj)
 {
-	this->ClapTrap::operator=(src);
+	this->ClapTrap::operator=(obj);
 	return (*this);
 }
 
-void ScavTrap::guardGate(void)
+void	ScavTrap::guardGate(void)
 {
 	std::cout
-		<< "ScavTrap "
-		<< this->getName()
-		<< " have enterred in Gate keeper mode."
+		<< BLUE
+		<< "SCAV \t("
+		<< this->name_
+		<< ") have enterred in Gate keeper mode."
+		<< RESET
 	<< std::endl;
 }

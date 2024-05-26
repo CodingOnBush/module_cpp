@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/20 17:40:33 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/26 10:59:59 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ class ClapTrap
 		int					attackDamage_;
 
 	public:
-		ClapTrap( void );
-		ClapTrap( const std::string name );
-		ClapTrap( ClapTrap const & src );
-		ClapTrap & operator=( ClapTrap const & src );
-		~ClapTrap( void );
+		ClapTrap(void);								// default constructor
+		ClapTrap(const std::string name);
+		ClapTrap(ClapTrap const & src);				// copy constructor
+		ClapTrap & operator=(ClapTrap const & src);	// assignation operator overload
+		~ClapTrap(void);							// destructor
+		
 		void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
