@@ -14,17 +14,21 @@
 
 #include "Point.hpp"
 
-Point::Point(void) : x_(0), y_(0) {}
+Point::Point(void) : x_(0), y_(0)
+{
+}
 
 Point::Point(const float x, const float y) :
 	x_(Fixed(x)),
 	y_(Fixed(y))
-{}
+{
+}
 
 Point::Point(const Point &rhs) :
 	x_(rhs.x_),
 	y_(rhs.y_)
-{}
+{
+}
 
 Point &Point::operator=(const Point &rhs)
 {
@@ -32,21 +36,30 @@ Point &Point::operator=(const Point &rhs)
 	return (*this);
 }
 
-Point::~Point(void) {}
+bool Point::operator==(const Point &rhs) const
+{
+	if (x_ == rhs.x_ && y_ == rhs.y_)
+		return (true);
+	return (false);
+}
+
+Point::~Point(void)
+{
+}
 
 const Fixed	Point::getX(void) const
 {
-	return x_;
+	return (x_);
 }
 
 const Fixed	Point::getY(void) const
 {
-	return y_;
+	return (y_);
 }
 
-std::ostream &operator<<(std::ostream &o, Point const &rhs)
+std::ostream &	operator<<(std::ostream &o, Point const &rhs)
 {
 	o << "Point(" << rhs.getX() << ", " << rhs.getY() << ")";
-	return o;
+	return (o);
 }
 

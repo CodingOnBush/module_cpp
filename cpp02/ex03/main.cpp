@@ -6,11 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/05/20 16:43:09 by momrane          ###   ########.fr       */
-=======
-/*   Updated: 2024/05/25 18:25:31 by allblue          ###   ########.fr       */
->>>>>>> newone
+/*   Updated: 2024/05/26 08:55:39 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +47,10 @@ static void	testComparisonOperators( void )
 	std::cout << a << " < " << b << "  : " << ((a < b) ? "true" : "false") << std::endl;
 	std::cout << a << " >= " << b << " : " << ((a >= b) ? "true" : "false") << std::endl;
 	std::cout << a << " <= " << b << " : " << ((a <= b) ? "true" : "false") << std::endl;
-<<<<<<< HEAD
-	std::cout << a << " == " << c << "    : " << ((a == c) ? "true" : "false") << std::endl;
-	std::cout << a << " != " << c << "    : " << ((a != c) ? "true" : "false") << std::endl;
-=======
 	std::cout << a << " == " << b << " : " << ((a == b) ? "true" : "false") << std::endl;
 	std::cout << a << " != " << b << " : " << ((a != b) ? "true" : "false") << std::endl;
 	std::cout << a << " == " << c << " : " << ((a == c) ? "true" : "false") << std::endl;
 	std::cout << a << " != " << c << " : " << ((a != c) ? "true" : "false") << std::endl;
->>>>>>> newone
 }
 
 static void	testArithmeticOperators( void )
@@ -110,8 +101,6 @@ static void	testIncrementDecrementOperators( void )
 	std::cout << "a = " << a << std::endl;
 	std::cout << "a++ = " << a++ << std::endl;
 	std::cout << "a = " << a << std::endl;
-<<<<<<< HEAD
-=======
 	
 	std::cout << "a > b : " << ((a > b) ? "true" : "false") << std::endl;
 	std::cout << "a < b : " << ((a < b) ? "true" : "false") << std::endl;
@@ -121,22 +110,18 @@ static void	testIncrementDecrementOperators( void )
 	std::cout << "a != b : " << ((a != b) ? "true" : "false") << std::endl;
 	std::cout << "a == c : " << ((a == c) ? "true" : "false") << std::endl;
 	std::cout << "a != c : " << ((a != c) ? "true" : "false") << std::endl;
->>>>>>> newone
 
 	std::cout << "b = " << b << std::endl;
 	std::cout << "--b = " << --b << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "b-- = " << b-- << std::endl;
 	std::cout << "b = " << b << std::endl;
-<<<<<<< HEAD
-=======
 	
 	std::cout << "b > c : " << ((b > c) ? "true" : "false") << std::endl;
 	std::cout << "b < c : " << ((b < c) ? "true" : "false") << std::endl;
 	std::cout << "b >= c : " << ((b >= c) ? "true" : "false") << std::endl;
 	std::cout << "b <= c : " << ((b <= c) ? "true" : "false") << std::endl;
 	std::cout << "b == c : " << ((b == c) ? "true" : "false") << std::endl;
->>>>>>> newone
 }
 
 static void	testFindMinMax( void )
@@ -160,20 +145,28 @@ static void	testFindMinMax( void )
 
 static void	testBSP( void )
 {
-	Point	a( 0.0f, 0.0f );
-	Point	b( 10.0f, 0.0f );
-	Point	c( 0.0f, 10.0f );
-	Point	point( 5.0f, 5.0f );
+	Point	a( 2.0f, 3.0f );
+	Point	b( 6.0f, 4.0f );
+	Point	c( 3.0f, 7.0f );
+	Point	x( 5.0f, 5.0f );
+	Point	z( 5.0f, 2.0f );
+	Point	y( 4.0f, 5.0f );
 
 	printTitle("BSP", 42);
 
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "c = " << c << std::endl;
-	std::cout << "point = " << point << std::endl;
+	std::cout << "x = " << x << std::endl;
+	std::cout << "z = " << z << std::endl;
+	std::cout << "y = " << y << std::endl;
 	
-	std::cout << "Let's check if point is inside the triangle abc" << std::endl;
-	std::cout << "bsp( a, b, c, point ) = " << bsp( a, b, c, point ) << std::endl;
+	std::cout << "Let's check if x is inside the triangle abc" << std::endl;
+	std::cout << "bsp( a, b, c, x ) = " << (bsp( a, b, c, x ) ? "true" : "false") << std::endl << std::endl;
+	std::cout << "Let's check if z is inside the triangle abc" << std::endl;
+	std::cout << "bsp( a, b, c, z ) = " << (bsp( a, b, c, z ) ? "true" : "false") << std::endl << std::endl;
+	std::cout << "Let's check if y is inside the triangle abc" << std::endl;
+	std::cout << "bsp( a, b, c, y ) = " << (bsp( a, b, c, y ) ? "true" : "false") << std::endl << std::endl;
 }
 
 int main( void )
