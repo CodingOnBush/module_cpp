@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:19 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 15:15:47 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 17:56:53 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 class ScavTrap : public ClapTrap
 {
 	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & obj);
-		~ScavTrap(void);
+		ScavTrap(void);								// default constructor
+		ScavTrap(ScavTrap const & obj);				// copy constructor
+		ScavTrap & operator=(ScavTrap const & obj);	// assignation operator
+		~ScavTrap(void);							// destructor
 
-		ScavTrap & operator=(ScavTrap const & obj);
+		ScavTrap(std::string name);
 
 		void	guardGate(void);
 };

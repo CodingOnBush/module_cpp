@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 15:50:05 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 17:56:23 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 		ClapTrap( void );								// default constructor
 		ClapTrap( ClapTrap const & obj );				// copy constructor
 		ClapTrap & operator=( ClapTrap const & obj );	// assignation operator
-		virtual ~ClapTrap( void );								// destructor
+		virtual ~ClapTrap( void );						// destructor
 		
 		ClapTrap( const std::string name );
 		virtual void	attack(std::string const & target);
