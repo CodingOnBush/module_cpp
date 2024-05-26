@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:51:12 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/25 18:17:08 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 08:57:34 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,20 +96,18 @@ Fixed Fixed::operator-(const Fixed &rhs) const
 Fixed Fixed::operator*(const Fixed &rhs) const
 {
 	Fixed	result;
-	int		div = pow(2, this->fractionalBits_);
 	int		newRaw = this->rawValue_ * rhs.getRawBits();
 
-	result.setRawBits(newRaw / div);
+	result.setRawBits(newRaw / (1 << this->fractionalBits_));
 	return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const
 {
 	Fixed	result;
-	int		div = pow(2, this->fractionalBits_);
 	int		newRaw = this->rawValue_ / rhs.getRawBits();
 
-	result.setRawBits(newRaw * div);
+	result.setRawBits(newRaw * (1 << this->fractionalBits_));
 	return (result);
 }
 
