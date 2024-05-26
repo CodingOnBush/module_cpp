@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:57 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/25 17:40:33 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 07:48:30 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ private:
 	static const int	fractionalBits_ = 8;
 
 public:
-	Fixed( void );
-	Fixed( const Fixed &rhs );
-	Fixed &	operator=( const Fixed &rhs );
-	~Fixed( void );
+	Fixed( void );							// Default constructor
+	Fixed( const Fixed &rhs );				// Copy constructor
+	Fixed &	operator=( const Fixed &rhs );	// Assignation operator
+	~Fixed( void );							// Destructor
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );

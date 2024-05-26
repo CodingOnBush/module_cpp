@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:51:12 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/25 18:20:23 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 08:18:00 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 Fixed::Fixed( void ) : rawValue_(0) {}
 
-Fixed::Fixed( const Fixed &rhs )
-{
-	*this = rhs;
-}
+Fixed::Fixed( const Fixed &rhs ) {*this = rhs;}
 
 Fixed &	Fixed::operator=( const Fixed &rhs )
 {
@@ -49,32 +46,44 @@ Fixed::Fixed( const float value )
 
 bool Fixed::operator>(const Fixed &rhs) const
 {
-	return (this->rawValue_ > rhs.getRawBits());
+	if (this->rawValue_ > rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 bool Fixed::operator<(const Fixed &rhs) const
 {
-	return (this->rawValue_ < rhs.getRawBits());
+	if (this->rawValue_ < rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 bool Fixed::operator>=(const Fixed &rhs) const
 {
-	return (this->rawValue_ >= rhs.getRawBits());	
+	if (this->rawValue_ >= rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 bool Fixed::operator<=(const Fixed &rhs) const
 {
-	return (this->rawValue_ <= rhs.getRawBits());
+	if (this->rawValue_ <= rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 bool Fixed::operator==(const Fixed &rhs) const
 {
-	return (this->rawValue_ == rhs.getRawBits());
+	if (this->rawValue_ == rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 bool Fixed::operator!=(const Fixed &rhs) const
 {
-	return (this->rawValue_ != rhs.getRawBits());	
+	if (this->rawValue_ != rhs.getRawBits())
+		return (true);
+	return (false);
 }
 
 Fixed Fixed::operator+(const Fixed &rhs) const
@@ -82,7 +91,7 @@ Fixed Fixed::operator+(const Fixed &rhs) const
 	Fixed	result;
 
 	result.setRawBits(this->rawValue_ + rhs.getRawBits());
-	return (result);	
+	return (result);
 }
 
 Fixed Fixed::operator-(const Fixed &rhs) const
@@ -90,7 +99,7 @@ Fixed Fixed::operator-(const Fixed &rhs) const
 	Fixed	result;
 	
 	result.setRawBits(this->rawValue_ - rhs.getRawBits());
-	return (result);	
+	return (result);
 }
 
 Fixed Fixed::operator*(const Fixed &rhs) const
@@ -141,14 +150,12 @@ Fixed Fixed::operator--(int)
 
 float Fixed::toFloat(void) const
 {
-	float	floatResult = this->rawValue_ / (float)(1 << this->fractionalBits_);
-	return (floatResult);
+	return (this->rawValue_ / (float)(1 << this->fractionalBits_));
 }
 
 int Fixed::toInt(void) const
 {
-	int	intResult = this->rawValue_ / (1 << this->fractionalBits_);
-	return (intResult);
+	return (this->rawValue_ / (1 << this->fractionalBits_));
 }
 
 std::ostream & operator<<( std::ostream &o, const Fixed &rhs )

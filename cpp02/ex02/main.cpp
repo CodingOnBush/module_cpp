@@ -6,7 +6,7 @@
 /*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/25 18:24:16 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/26 08:21:40 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,16 +151,12 @@ static void	testFromSubject( void )
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	printTitle("FROM SUBJECT", 42);
-
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "b\t: " << b << std::endl;
-
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "++a\t: " << ++a << std::endl;
-	std::cout << "a\t: " << a << std::endl;
-	std::cout << "a++\t: " << a++ << std::endl;
-	std::cout << "a\t: " << a << std::endl;
-	
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 }
 

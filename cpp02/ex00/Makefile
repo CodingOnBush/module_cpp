@@ -6,14 +6,14 @@
 #    By: allblue <allblue@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/25 19:09:29 by allblue          ###   ########.fr        #
+#    Updated: 2024/05/26 07:50:52 by allblue          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	fixed
+NAME	:=	exec
 
 CPP		:=	c++
-CFLAGS	:=	-Wall -Wextra -Werror# -std=c++98
+CFLAGS	:=	-Wall -Wextra -Werror
 
 INC_DIR	:=	.
 SRC_DIR	:=	.
