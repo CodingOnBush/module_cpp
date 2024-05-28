@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 13:39:58 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:33:36 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 # include <iostream>
 
-// #define RED "\033[0;31m"
-// #define GREEN "\033[0;32m"
-// #define YELLOW "\033[0;33m"
-// #define BLUE "\033[0;34m"
-// #define RESET "\033[0m"
+# define MAGENTA	"\e[1;35m"
+# define RESET		"\033[0m"
 
 class ClapTrap
 {

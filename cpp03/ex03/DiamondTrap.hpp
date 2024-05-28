@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 13:44:26 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:33:05 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-// # define CYAN "\033[0;36m"
-# define RESET "\033[0m"
+# define CYAN	"\e[1;36m"
+# define RESET	"\033[0m"
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {

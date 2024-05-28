@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 12:06:34 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:52:03 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 FragTrap::FragTrap(void)
 {
 	std::cout
+		<< GREEN
 		<< "[FRAG] \tdefault constructor called."
+		<< RESET
 	<< std::endl;
 }
 
@@ -26,7 +28,9 @@ FragTrap::FragTrap(std::string name)
 	this->energyPoints_ = 100;
 	this->attackDamage_ = 30;
 	std::cout
+		<< GREEN
 		<< "[FRAG] \tconstructor called with (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }
 
@@ -41,7 +45,9 @@ FragTrap::FragTrap(FragTrap const & obj)
 FragTrap::~FragTrap(void)
 {
 	std::cout
+		<< GREEN
 		<< "[FRAG] \tdestructor called for (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }
 
@@ -57,6 +63,8 @@ FragTrap & FragTrap::operator=(FragTrap const & obj)
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout
+		<< GREEN
 		<< "[FRAG] \tHigh fives request from (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }

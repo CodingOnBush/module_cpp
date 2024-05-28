@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 13:41:50 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:32:59 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-#define RESET "\033[0m"
+# define GREEN	"\e[1;32m"
+# define RESET	"\033[0m"
 
 class FragTrap : virtual public ClapTrap
 {

@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 11:51:50 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:44:56 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ ClapTrap::ClapTrap(void)
 	this->hitPoints_ = 10;
 	this->energyPoints_ = 10;
 	this->attackDamage_ = 0;
-	std::cout << "[CLAP] \tdefault constructor called." << std::endl;
+	std::cout << MAGENTA
+		<< "[CLAP] \tdefault constructor called."
+	<< RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : 
@@ -27,7 +29,9 @@ ClapTrap::ClapTrap(std::string name) :
 	energyPoints_(10),
 	attackDamage_(0)
 {
-	std::cout << "[CLAP] \t(" << this->name_ << ") constructor" << std::endl;
+	std::cout << MAGENTA
+		<< "[CLAP] \t(" << this->name_ << ") constructor"
+	<< RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
@@ -45,49 +49,51 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "[CLAP] \t(" << this->name_ << ") destructor called." << std::endl;
+	std::cout << MAGENTA
+		<< "[CLAP] \tdestructor called for (" << this->name_ << ")."
+	<< RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
 	if (this->hitPoints_ <= 0 || this->energyPoints_ <= 0)
 	{
-		std::cout
-			<< "[CLAP] \t" 	<< this->name_ 
+		std::cout << MAGENTA
+			<< "[CLAP] \tattack(" << target << ") -> " 	<< this->name_
 			<< " can't attack!"
-		<< std::endl;	
+		<< RESET << std::endl;
 		return ;
 	}
 	this->energyPoints_--;
-	std::cout
-		<< "[CLAP] \t" 	<< this->name_ 
+	std::cout << MAGENTA
+		<< "[CLAP] \tattack(" << target << ") -> " 	<< this->name_
 		<< " attacks " << target 
 		<< ", causing " << this->attackDamage_ << " points of damage!" 
-	<< std::endl;
+	<< RESET << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout
-		<< "[CLAP] \t" 	<< this->name_ 
+	std::cout << MAGENTA
+		<< "[CLAP] \ttakeDamage(" << amount << ") -> " 	<< this->name_
 		<< " take " << amount << " points of damage!" 
-	<< std::endl;
+	<< RESET << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->hitPoints_ <= 0 || this->energyPoints_ <= 0)
 	{
-		std::cout
-			<< "[CLAP] \t" 	<< this->name_ 
+		std::cout << MAGENTA
+			<< "[CLAP] \tbeRepaired(" << amount << ") -> " 	<< this->name_
 			<< " can't be repaired!"
-		<< std::endl;
+		<< RESET << std::endl;
 		return ;
 	}
 	this->hitPoints_ += amount;
 	this->energyPoints_--;
-	std::cout
-		<< "[CLAP] \t" 	<< this->name_ 
+	std::cout << MAGENTA
+		<< "[CLAP] \tbeRepaired(" << amount << ") -> " 	<< this->name_
 		<< " be repaired for " << amount << " points!" 
-	<< std::endl;
+	<< RESET << std::endl;
 }

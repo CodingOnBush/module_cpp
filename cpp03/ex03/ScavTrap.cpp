@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 11:54:42 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:45:38 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ ScavTrap::ScavTrap(void)
 	this->hitPoints_ = 100;
 	this->energyPoints_ = 50;
 	this->attackDamage_ = 20;
-	std::cout
+	std::cout << YELLOW
 		<< "[SCAV] \tdefault constructor called."
-	<< std::endl;
+	<< RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -29,9 +29,9 @@ ScavTrap::ScavTrap(std::string name)
 	this->hitPoints_ = 100;
 	this->energyPoints_ = 50;
 	this->attackDamage_ = 20;
-	std::cout
+	std::cout << YELLOW
 		<< "[SCAV] \tconstructor called with (" << this->name_ << ")."
-	<< std::endl;
+	<< RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
@@ -44,9 +44,9 @@ ScavTrap::ScavTrap(const ScavTrap& obj)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout
+	std::cout << YELLOW
 		<< "[SCAV] \tdestructor called for (" << this->name_ << ")."
-	<< std::endl;
+	<< RESET << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap& obj)
@@ -60,25 +60,25 @@ ScavTrap & ScavTrap::operator=(const ScavTrap& obj)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout
-		<< "[SCAV] \tGate keeper mode activated for (" << this->name_ << ")."
-	<< std::endl;
+	std::cout << YELLOW
+		<< "[SCAV] \tguardGate() -> Gate keeper mode activated for (" << this->name_ << ")."
+	<< RESET << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->hitPoints_ <= 0 || this->energyPoints_ <= 0)
 	{
-		std::cout
-			<< "[SCAV] \t" << this->name_
+		std::cout << YELLOW
+			<< "[SCAV] \tattack(" << target << ") -> " << this->name_
 			<< " can't attack!"
-		<< std::endl;
+		<< RESET << std::endl;
 		return ;
 	}
 	this->energyPoints_--;
-	std::cout
-		<< "[SCAV] \t" << this->name_
+	std::cout << YELLOW
+		<< "[SCAV] \tattack(" << target << ") -> " << this->name_
 		<< " attack " << target
 		<< " causing " << this->attackDamage_ << " points of damage !"
-	<< std::endl;
+	<< RESET << std::endl;
 }
