@@ -6,19 +6,20 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/27 13:50:05 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 13:44:26 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <iostream>
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
+# include <iostream>
 
-#define CYAN "\033[0;36m"
-#define RESET "\033[0m"
+// # define CYAN "\033[0;36m"
+# define RESET "\033[0m"
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {
@@ -31,9 +32,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap & operator=(DiamondTrap const & obj);	// assignation operator
 		~DiamondTrap( void );								// destructor
 		
-		DiamondTrap(const std::string name);
+		DiamondTrap(std::string name);
 		
-		void	highFivesGuys(void);
+		void	attack(const std::string& target);
+		void	whoAmI(void);
 };
 
 #endif

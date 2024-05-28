@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:19 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 11:53:17 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 13:41:56 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // # define BLUE	"\033[0;34m"
 // # define RESET	"\033[0m"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap(void);								// default constructor

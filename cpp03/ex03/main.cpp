@@ -6,49 +6,55 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/27 13:28:05 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 13:47:31 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-
-// static void	ex00Test(void)
-// {
-// 	ClapTrap	luffy("Luffy");
-// 	ClapTrap	zoro("Zoro");
-// 	luffy.attack("Zoro");
-// 	zoro.takeDamage(0);
-// 	for (size_t i = 1; i < 6; i++)
-// 	{
-// 		luffy.attack("Zoro");
-// 		zoro.takeDamage(0);
-// 		if (i % 2 == 0)
-// 			zoro.beRepaired(1);
-// 	}
-// 	ScavTrap	nami("Nami");
-// 	ScavTrap	sanji("Sanji");
-// 	nami.guardGate();
-// 	sanji.guardGate();
-// 	for (size_t i = 1; i < 6; i++)
-// 	{
-// 		nami.attack("Sanji");
-// 		sanji.takeDamage(5);
-// 		if (i % 2 == 0)
-// 			sanji.beRepaired(1);
-// 	}
-// }
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	// ScavTrap	scav("juju");
-	FragTrap	frag("jaja");
+	{
+		ClapTrap	clap("clapisto");
 	
-	// scav.attack("mich");
-	// scav.guardGate();
-
-	frag.attack("mich");
-	frag.highFivesGuys();
+		clap.attack("clapisto");
+		clap.takeDamage(5);
+		clap.beRepaired(5);
+		clap.attack("player");
+	}
+	std::cout << std::endl;
+	{
+		ScavTrap	scav("scavisto");
+	
+		scav.attack("scavisto");
+		scav.takeDamage(5);
+		scav.beRepaired(5);
+		scav.attack("player");
+		scav.guardGate();
+	}
+	std::cout << std::endl;
+	{
+		FragTrap	frag("fragisto");
+	
+		frag.attack("fragisto");
+		frag.takeDamage(5);
+		frag.beRepaired(5);
+		frag.attack("player");
+		frag.highFivesGuys();
+	}
+	std::cout << std::endl;
+	{
+		DiamondTrap	diamond("diamondisto");
+	
+		diamond.attack("diamondisto");
+		diamond.takeDamage(5);
+		diamond.beRepaired(5);
+		diamond.attack("player");
+		diamond.highFivesGuys();
+		diamond.whoAmI();
+	}
 	return (0);
 }
