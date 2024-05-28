@@ -59,8 +59,8 @@ class Sample {
 public:
 	Sample(void);							// ✅ Constructeur par défaut 
 	Sample(const int n);					// 🆗 Bonne pratique ce constructeur
-	Sample(const Sample &rhs);				// ✅ Constructeur de recopie
-	Sample	&operator=(const Sample &rhs);	// ✅ Opérateur d’affectation
+	Sample(const Sample &obj);				// ✅ Constructeur de recopie
+	Sample	&operator=(const Sample &obj);	// ✅ Opérateur d’affectation
 	~Sample(void);							// ✅ Destructeur
 
 	const int	getFoo(void);				// 🆗 Bonne pratique cet accesseur
@@ -89,15 +89,15 @@ Sample::Sample(const int n) : foo_(n) {
 	return ;
 }
 
-Sample::Sample(const Sample &rhs) {
+Sample::Sample(const Sample &obj) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = rhs;
+	*this = obj;
 	return ;
 }
 
-Sample	&Sample::operator=(const Sample &rhs) {
+Sample	&Sample::operator=(const Sample &obj) {
 	std::cout << "Assignation operator called" << std::endl;
-	this->foo_ = rhs.getFoo();
+	this->foo_ = obj.getFoo();
 	return (*this);
 }
 
@@ -252,11 +252,11 @@ class Fixed
 {
 public:
 	Fixed(void);
-	Fixed(const Fixed &rhs);
+	Fixed(const Fixed &obj);
 	Fixed(const int n);
 	Fixed(const float f);
 	~Fixed(void);
-	Fixed	&operator=(const Fixed &rhs);
+	Fixed	&operator=(const Fixed &obj);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;

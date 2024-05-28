@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:38 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 08:21:40 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:00:35 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,18 @@ static void	testArithmeticOperators( void )
 
 static void	testIncrementDecrementOperators( void )
 {
-	// Fixed c( Fixed(42.75f) / a );
-
-	printTitle("OPERATEURS D'INCRE/DECREMENTATION", 42);
-	
 	Fixed a( 10 );
 	Fixed b( 10 );
+	Fixed c( 10 );
+	Fixed d( 10 );
+	
+	printTitle("OPERATEURS D'INCRE/DECREMENTATION", 42);
 	
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 
 	std::cout << "a++ < b : " << ((a++ < b) ? "true" : "false") << std::endl;
 	std::cout << "a = " << a << std::endl;
-
-	Fixed c( 10 );
-	Fixed d( 10 );
 	
 	std::cout << "c = " << c << std::endl;
 	std::cout << "d = " << d << std::endl;

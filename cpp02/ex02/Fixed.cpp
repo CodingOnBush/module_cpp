@@ -3,118 +3,125 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:51:12 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 08:18:00 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/27 16:59:49 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ) : rawValue_(0) {}
-
-Fixed::Fixed( const Fixed &rhs ) {*this = rhs;}
-
-Fixed &	Fixed::operator=( const Fixed &rhs )
+Fixed::Fixed(void) : rawValue_(0)
 {
-	this->rawValue_ = rhs.getRawBits();
+}
+
+Fixed::Fixed(Fixed const &obj)
+{
+	*this = obj;
+}
+
+Fixed &	Fixed::operator=(Fixed const &obj)
+{
+	this->rawValue_ = obj.getRawBits();
 	return (*this);
 }
 
-Fixed::~Fixed( void ) {}
+Fixed::~Fixed(void)
+{
+}
 
 int	Fixed::getRawBits(void) const
 {
 	return (this->rawValue_);
 }
 
-void	Fixed::setRawBits( int const raw )
+void	Fixed::setRawBits(int const raw)
 {
 	this->rawValue_ = raw;
 }
 
-Fixed::Fixed( const int value )
+Fixed::Fixed(int const value)
 {
 	this->rawValue_ = value << this->fractionalBits_;
 }
 
-Fixed::Fixed( const float value )
+Fixed::Fixed(float const value)
 {
 	this->rawValue_ = roundf(value * (1 << this->fractionalBits_));
 }
 
-bool Fixed::operator>(const Fixed &rhs) const
+bool Fixed::operator>(const Fixed &obj) const
 {
-	if (this->rawValue_ > rhs.getRawBits())
+	if (this->rawValue_ > obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<(const Fixed &rhs) const
+bool Fixed::operator<(const Fixed &obj) const
 {
-	if (this->rawValue_ < rhs.getRawBits())
+	if (this->rawValue_ < obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>=(const Fixed &rhs) const
+bool Fixed::operator>=(const Fixed &obj) const
 {
-	if (this->rawValue_ >= rhs.getRawBits())
+	if (this->rawValue_ >= obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<=(const Fixed &rhs) const
+bool Fixed::operator<=(const Fixed &obj) const
 {
-	if (this->rawValue_ <= rhs.getRawBits())
+	if (this->rawValue_ <= obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator==(const Fixed &rhs) const
+bool Fixed::operator==(const Fixed &obj) const
 {
-	if (this->rawValue_ == rhs.getRawBits())
+	if (this->rawValue_ == obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator!=(const Fixed &rhs) const
+bool Fixed::operator!=(const Fixed &obj) const
 {
-	if (this->rawValue_ != rhs.getRawBits())
+	if (this->rawValue_ != obj.getRawBits())
 		return (true);
 	return (false);
 }
 
-Fixed Fixed::operator+(const Fixed &rhs) const
+Fixed Fixed::operator+(const Fixed &obj) const
 {
 	Fixed	result;
 
-	result.setRawBits(this->rawValue_ + rhs.getRawBits());
+	result.setRawBits(this->rawValue_ + obj.getRawBits());
 	return (result);
 }
 
-Fixed Fixed::operator-(const Fixed &rhs) const
+Fixed Fixed::operator-(const Fixed &obj) const
 {
 	Fixed	result;
 	
-	result.setRawBits(this->rawValue_ - rhs.getRawBits());
+	result.setRawBits(this->rawValue_ - obj.getRawBits());
 	return (result);
 }
 
-Fixed Fixed::operator*(const Fixed &rhs) const
+Fixed Fixed::operator*(const Fixed &obj) const
 {
 	Fixed	result;
-	int		newRaw = this->rawValue_ * rhs.getRawBits();
+	int		newRaw = this->rawValue_ * obj.getRawBits();
 
 	result.setRawBits(newRaw / (1 << this->fractionalBits_));
 	return (result);
 }
 
-Fixed Fixed::operator/(const Fixed &rhs) const
+Fixed Fixed::operator/(const Fixed &obj) const
 {
 	Fixed	result;
-	int		newRaw = this->rawValue_ / rhs.getRawBits();
+	int		newRaw = this->rawValue_ / obj.getRawBits();
 
 	result.setRawBits(newRaw * (1 << this->fractionalBits_));
 	return (result);
@@ -158,9 +165,9 @@ int Fixed::toInt(void) const
 	return (this->rawValue_ / (1 << this->fractionalBits_));
 }
 
-std::ostream & operator<<( std::ostream &o, const Fixed &rhs )
+std::ostream & operator<<(std::ostream &o, const Fixed &obj)
 {
-	o << rhs.toFloat();
+	o << obj.toFloat();
 	return (o);
 }
 

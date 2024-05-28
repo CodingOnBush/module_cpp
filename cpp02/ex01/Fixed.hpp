@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:49:57 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/25 17:43:27 by allblue          ###   ########.fr       */
+/*   Updated: 2024/05/27 16:58:31 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,26 @@
 
 class Fixed
 {
-private:
-	int					rawValue_;
-	static const int	fractionalBits_ = 8;
+	private:
+		int					rawValue_;
+		int static const	fractionalBits_ = 8;
 
-public:
-	Fixed( void );
-	Fixed( const Fixed &rhs );
-	Fixed &	operator=( const Fixed &rhs );
-	~Fixed( void );
+	public:
+		Fixed(void);							// Default constructor
+		Fixed(Fixed const &obj);				// Copy constructor
+		Fixed &	operator=(Fixed const &obj);	// Assignation operator
+		~Fixed(void);							// Destructor
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
-	Fixed( const int value );
-	Fixed( const float value );
+		Fixed(int const value);
+		Fixed(float const value);
 
-	float	toFloat( void ) const;
-	int		toInt( void ) const;
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
 
-std::ostream &	operator<<( std::ostream &o, const Fixed &rhs );
+std::ostream &	operator<<(std::ostream &o, Fixed const &obj);
 
 #endif

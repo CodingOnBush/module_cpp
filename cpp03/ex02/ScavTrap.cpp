@@ -6,52 +6,53 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/26 19:06:54 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 11:54:42 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
-	: ClapTrap()
 {
+	this->name_ = "";
+	this->hitPoints_ = 100;
+	this->energyPoints_ = 50;
+	this->attackDamage_ = 20;
 	std::cout
-		<< YELLOW
 		<< "[SCAV] \tdefault constructor called."
-		<< RESET
 	<< std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
 	this->name_ = name;
-	this->hitpoints_ = 100;
+	this->hitPoints_ = 100;
 	this->energyPoints_ = 50;
 	this->attackDamage_ = 20;
 	std::cout
-		<< YELLOW
 		<< "[SCAV] \tconstructor called with (" << this->name_ << ")."
-		<< RESET
 	<< std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & obj) : ClapTrap(obj)
+ScavTrap::ScavTrap(const ScavTrap& obj)
 {
+	this->name_ = obj.name_;
+	this->hitPoints_ = obj.hitPoints_;
+	this->energyPoints_ = obj.energyPoints_;
+	this->attackDamage_ = obj.attackDamage_;
 }
 
 ScavTrap::~ScavTrap(void)
 {
 	std::cout
-		<< YELLOW
 		<< "[SCAV] \tdestructor called for (" << this->name_ << ")."
-		<< RESET
 	<< std::endl;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & obj)
+ScavTrap & ScavTrap::operator=(const ScavTrap& obj)
 {
-	this->name_ = obj.name_;
-	this->hitpoints_ = obj.hitpoints_;
+	this->ClapTrap::ClapTrap::operator=(obj);
+	this->hitPoints_ = obj.hitPoints_;
 	this->energyPoints_ = obj.energyPoints_;
 	this->attackDamage_ = obj.attackDamage_;
 	return (*this);
@@ -60,21 +61,24 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & obj)
 void	ScavTrap::guardGate(void)
 {
 	std::cout
-		<< YELLOW
 		<< "[SCAV] \tGate keeper mode activated for (" << this->name_ << ")."
-		<< RESET
 	<< std::endl;
 }
 
-void	ScavTrap::attack(std::string const & target)
+void	ScavTrap::attack(const std::string& target)
 {
-	if (this->hitpoints_ > 0 && this->energyPoints_ > 0)
+	if (this->hitPoints_ <= 0 || this->energyPoints_ <= 0)
 	{
-		this->energyPoints_--;
 		std::cout
-			<< YELLOW
-			<< "[SCAV] \t" << this->name_ << " attack " << target << " causing " << this->attackDamage_ << " points of damage!"
-			<< RESET
+			<< "[SCAV] \t" << this->name_
+			<< " can't attack!"
 		<< std::endl;
+		return ;
 	}
+	this->energyPoints_--;
+	std::cout
+		<< "[SCAV] \t" << this->name_
+		<< " attack " << target
+		<< " causing " << this->attackDamage_ << " points of damage !"
+	<< std::endl;
 }

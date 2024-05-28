@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 12:14:01 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/27 13:50:05 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <iostream>
 
+#define CYAN "\033[0;36m"
 #define RESET "\033[0m"
 
-class FragTrap : public ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
+	private:
+		std::string	name_;
+
 	public:
-		FragTrap(void);								// default constructor
-		FragTrap(const FragTrap& obj);				// copy constructor
-		FragTrap & operator=(const FragTrap& obj);	// assignation operator
-		~FragTrap(void);							// destructor
+		DiamondTrap(void);									// default constructor
+		DiamondTrap(DiamondTrap const & obj);				// copy constructor
+		DiamondTrap & operator=(DiamondTrap const & obj);	// assignation operator
+		~DiamondTrap( void );								// destructor
 		
-		FragTrap(std::string name);
+		DiamondTrap(const std::string name);
 		
 		void	highFivesGuys(void);
 };

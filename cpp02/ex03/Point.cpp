@@ -24,21 +24,21 @@ Point::Point(const float x, const float y) :
 {
 }
 
-Point::Point(const Point &rhs) :
-	x_(rhs.x_),
-	y_(rhs.y_)
+Point::Point(const Point &obj) :
+	x_(obj.x_),
+	y_(obj.y_)
 {
 }
 
-Point &Point::operator=(const Point &rhs)
+Point &Point::operator=(const Point &obj)
 {
-	(void)rhs;
+	(void)obj;
 	return (*this);
 }
 
-bool Point::operator==(const Point &rhs) const
+bool Point::operator==(const Point &obj) const
 {
-	if (x_ == rhs.x_ && y_ == rhs.y_)
+	if (x_ == obj.x_ && y_ == obj.y_)
 		return (true);
 	return (false);
 }
@@ -57,9 +57,9 @@ const Fixed	Point::getY(void) const
 	return (y_);
 }
 
-std::ostream &	operator<<(std::ostream &o, Point const &rhs)
+std::ostream &	operator<<(std::ostream &o, Point const &obj)
 {
-	o << "Point(" << rhs.getX() << ", " << rhs.getY() << ")";
+	o << "Point(" << obj.getX() << ", " << obj.getY() << ")";
 	return (o);
 }
 

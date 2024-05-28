@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 12:08:10 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/27 13:28:05 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,41 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
+// static void	ex00Test(void)
+// {
+// 	ClapTrap	luffy("Luffy");
+// 	ClapTrap	zoro("Zoro");
+// 	luffy.attack("Zoro");
+// 	zoro.takeDamage(0);
+// 	for (size_t i = 1; i < 6; i++)
+// 	{
+// 		luffy.attack("Zoro");
+// 		zoro.takeDamage(0);
+// 		if (i % 2 == 0)
+// 			zoro.beRepaired(1);
+// 	}
+// 	ScavTrap	nami("Nami");
+// 	ScavTrap	sanji("Sanji");
+// 	nami.guardGate();
+// 	sanji.guardGate();
+// 	for (size_t i = 1; i < 6; i++)
+// 	{
+// 		nami.attack("Sanji");
+// 		sanji.takeDamage(5);
+// 		if (i % 2 == 0)
+// 			sanji.beRepaired(1);
+// 	}
+// }
+
 int main(void)
 {
-	{
-		ClapTrap	clap("clapisto");
+	// ScavTrap	scav("juju");
+	FragTrap	frag("jaja");
 	
-		clap.attack("clapisto");
-		clap.takeDamage(5);
-		clap.beRepaired(5);
-		clap.attack("player");
-	}
-	std::cout << std::endl;
-	{
-		ScavTrap	scav("scavisto");
-	
-		scav.attack("scavisto");
-		scav.takeDamage(5);
-		scav.beRepaired(5);
-		scav.attack("player");
-		scav.guardGate();
-	}
-	std::cout << std::endl;
-	{
-		FragTrap	frag("fragisto");
-	
-		frag.attack("fragisto");
-		frag.takeDamage(5);
-		frag.beRepaired(5);
-		frag.attack("player");
-		frag.highFivesGuys();
-	}
+	// scav.attack("mich");
+	// scav.guardGate();
+
+	frag.attack("mich");
+	frag.highFivesGuys();
 	return (0);
 }

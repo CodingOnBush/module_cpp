@@ -1,62 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 12:06:34 by momrane          ###   ########.fr       */
+/*   Updated: 2024/05/28 12:17:18 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-FragTrap::FragTrap(void)
+DiamondTrap::DiamondTrap(void)
 {
 	std::cout
+		<< CYAN
 		<< "[FRAG] \tdefault constructor called."
+		<< RESET
 	<< std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name)
 {
-	this->name_ = name;
-	this->hitPoints_ = 100;
-	this->energyPoints_ = 100;
-	this->attackDamage_ = 30;
+	this->name_ = name + "_clap_name";
 	std::cout
+		<< CYAN
 		<< "[FRAG] \tconstructor called with (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & obj)
+DiamondTrap::DiamondTrap(DiamondTrap const & obj)
 {
-	this->name_ = obj.name_;
-	this->hitPoints_ = obj.hitPoints_;
-	this->energyPoints_ = obj.energyPoints_;
-	this->attackDamage_ = obj.attackDamage_;
+	*this = obj;
 }
 
-FragTrap::~FragTrap(void)
+DiamondTrap::~DiamondTrap(void)
 {
 	std::cout
+		<< CYAN
 		<< "[FRAG] \tdestructor called for (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }
 
-FragTrap & FragTrap::operator=(FragTrap const & obj)
+DiamondTrap & DiamondTrap::operator=(DiamondTrap const & obj)
 {
 	this->name_ = obj.name_;
-	this->hitPoints_ = obj.hitPoints_;
-	this->energyPoints_ = obj.energyPoints_;
-	this->attackDamage_ = obj.attackDamage_;
 	return (*this);
 }
 
-void	FragTrap::highFivesGuys(void)
+void	DiamondTrap::highFivesGuys(void)
 {
 	std::cout
-		<< "[FRAG] \tHigh fives request from (" << this->name_ << ")."
+		<< CYAN
+		<< "[FRAG] \tHigh fives guys started with (" << this->name_ << ")."
+		<< RESET
 	<< std::endl;
 }

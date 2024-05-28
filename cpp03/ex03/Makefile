@@ -6,7 +6,7 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/27 16:46:01 by momrane          ###   ########.fr        #
+#    Updated: 2024/05/27 13:23:25 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INC_DIR	:=	.
 SRC_DIR	:=	.
 BIN_DIR	:=	./bin
 
-FILES	:=	main Fixed
+FILES	:=	main ClapTrap ScavTrap FragTrap DiamondTrap
 SRC		:=	$(addprefix $(SRC_DIR)/, $(addsuffix .cpp, $(FILES)))
 
 OBJ		:=	$(SRC:$(SRC_DIR)/%.cpp=$(BIN_DIR)/%.o)
