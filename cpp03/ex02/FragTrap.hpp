@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:51:37 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 11:46:48 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class FragTrap : public ClapTrap
 		
 		FragTrap(std::string name);
 		
+		//		attack inherited
+		//		takeDamage inherited
+		//		beRepaired inherited
 		void	highFivesGuys(void);
 };
 

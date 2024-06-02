@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:44:19 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:52:17 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 11:46:33 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		
 		void	attack(const std::string& target);
+		//		takeDamage inherited
+		//		beRepaired inherited
 		void	guardGate(void);
 };
 

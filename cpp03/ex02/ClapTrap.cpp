@@ -6,18 +6,18 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:48:15 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 11:45:17 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
+	: name_(""),
+	  hitPoints_(10),
+	  energyPoints_(10),
+	  attackDamage_(0)
 {
-	this->name_ = "";
-	this->hitPoints_ = 10;
-	this->energyPoints_ = 10;
-	this->attackDamage_ = 0;
 	std::cout << MAGENTA << "[CLAP] \tdefault constructor called." << RESET << std::endl;
 }
 

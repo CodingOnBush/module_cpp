@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:52:03 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 11:55:20 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 FragTrap::FragTrap(void)
 {
+	this->name_ = "";
+	this->hitPoints_ = 100;
+	this->energyPoints_ = 100;
+	this->attackDamage_ = 30;
 	std::cout
 		<< GREEN
 		<< "[FRAG] \tdefault constructor called."
@@ -64,7 +68,7 @@ void	FragTrap::highFivesGuys(void)
 {
 	std::cout
 		<< GREEN
-		<< "[FRAG] \tHigh fives request from (" << this->name_ << ")."
+		<< "[FRAG] \tHigh fives requested from (" << this->name_ << ")."
 		<< RESET
 	<< std::endl;
 }

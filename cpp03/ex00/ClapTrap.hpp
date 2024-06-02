@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:49:59 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 10:31:25 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 class ClapTrap
 {
 	private:
-		const std::string	name_;
-		int					hitPoints_;
-		int					energyPoints_;
-		int					attackDamage_;
+		std::string	name_;
+		int			hitPoints_;
+		int			energyPoints_;
+		int			attackDamage_;
 
 	public:
 		ClapTrap(void);								// default constructor
@@ -32,7 +32,7 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap& obj);	// assignation operator overload
 		~ClapTrap(void);							// destructor
 		
-		ClapTrap(const std::string name);
+		ClapTrap(std::string name);
 		
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
