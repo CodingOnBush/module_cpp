@@ -6,14 +6,14 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/28 18:34:24 by momrane          ###   ########.fr        #
+#    Updated: 2024/06/02 18:18:49 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	exec
 
 CPP		:=	c++
-CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g3
 
 INC_DIR	:=	.
 SRC_DIR	:=	.

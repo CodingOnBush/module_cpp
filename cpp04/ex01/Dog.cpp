@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:08:41 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 18:38:16 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 18:26:28 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,35 @@ Dog::Dog(void)
 {
 	this->type = "Dog";
 	this->brain = new Brain();
-	std::cout << CYAN << "Dog constructor" << RESET << std::endl;
+	std::cout << CYAN << "[DOG] constructor" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog& obj)
 {
-	std::cout << CYAN << "Dog copy constructor" << RESET << std::endl;
+	std::cout << CYAN << "[DOG] copy constructor" << RESET << std::endl;
 	*this = obj;
 }
 
 Dog &Dog::operator=(const Dog& obj)
 {
-	std::cout << CYAN << "Dog assignation operator" << RESET << std::endl;
+	std::cout << CYAN << "[DOG] assignation operator" << RESET << std::endl;
 	this->type = obj.type;
-	this->brain = obj.brain;
+
+	// It's a shallow copy (wrong) :
+	// this->brain = obj.brain;
+
+	// It's a deep copy (correct) :
+	this->brain = new Brain(*obj.brain);
 	return (*this);
 }
 
 Dog::~Dog(void)
 {
+	std::cout << CYAN << "[DOG] destructor" << RESET << std::endl;
 	delete this->brain;
-	std::cout << CYAN << "Dog destructor" << RESET << std::endl;
 }
 
 void Dog::makeSound(void) const
 {
-	std::cout << CYAN << "Dog : Woof Woof" << RESET << std::endl;
+	std::cout << CYAN << "[DOG] : Woof Woof" << RESET << std::endl;
 }

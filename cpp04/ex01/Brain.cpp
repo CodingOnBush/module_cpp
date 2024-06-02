@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:51:29 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 18:34:45 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 18:40:51 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Brain::Brain(void)
 {
-	std::cout << GREEN << "Brain constructor" << RESET << std::endl;
+	std::cout << GREEN << "[BRAIN] constructor" << RESET << std::endl;
 }
 
 Brain::Brain(const Brain& obj)
 {
-	std::cout << GREEN << "Brain copy constructor" << RESET << std::endl;
+	std::cout << GREEN << "[BRAIN] copy constructor" << RESET << std::endl;
 	*this = obj;
 }
 
 Brain &Brain::operator=(const Brain& obj)
 {
-	std::cout << GREEN << "Brain assignation operator" << RESET << std::endl;
+	std::cout << GREEN << "[BRAIN] assignation operator" << RESET << std::endl;
 	for (int i = 0; i < 100; i++)
 		this->ideas[i] = obj.ideas[i];
 	return (*this);
@@ -33,5 +33,5 @@ Brain &Brain::operator=(const Brain& obj)
 
 Brain::~Brain(void)
 {
-	std::cout << GREEN << "Brain destructor" << RESET << std::endl;
+	std::cout << GREEN << "[BRAIN] destructor" << RESET << std::endl;
 }
