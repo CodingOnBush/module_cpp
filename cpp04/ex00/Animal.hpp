@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 17:46:32 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 17:29:38 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 		Animal(void);							// default constructor
 		Animal(const Animal& obj);				// copy constructor
 		Animal &operator=(const Animal& obj);	// assignation operator
-		virtual ~Animal(void);							// destructor
+		virtual ~Animal(void);					// destructor
 
 		std::string		getType(void) const;
 		virtual void	makeSound(void) const;

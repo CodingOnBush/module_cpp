@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 17:47:00 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 17:35:01 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,30 @@ static void	test2(void)
 	delete ptrAnimal;
 }
 
+static void	subsjectTest(void)
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	// ...
+	
+	delete j;
+	delete i;
+}
+
 int main(void)
 {
+	subsjectTest();
+	std::cout << std::endl;
+	std::cout << "════════════════════════════════════════════════════════════════════════════════" << std::endl;
+	std::cout << std::endl;
 	test1();
 	std::cout << std::endl;
 	std::cout << "════════════════════════════════════════════════════════════════════════════════" << std::endl;
