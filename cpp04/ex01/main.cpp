@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 18:41:17 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/02 19:34:42 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,14 @@ int main(void)
 		delete [] array;
 	}
 
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
 	
 	{
-		Dog	*dog = new Dog();
-		Dog	*cpy;
+		Dog	dog = Dog();
+		Dog	cpy = dog;
 
-		cpy = dog;
-		dog->makeSound();
-		cpy->makeSound();
-		
-		delete dog;
+		dog.makeSound();
+		cpy.makeSound();
 	}
 	return (0);
 }
