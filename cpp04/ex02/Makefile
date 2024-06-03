@@ -6,20 +6,20 @@
 #    By: momrane <momrane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 15:48:49 by momrane           #+#    #+#              #
-#    Updated: 2024/05/27 12:23:24 by momrane          ###   ########.fr        #
+#    Updated: 2024/06/03 08:07:25 by momrane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	exec
 
 CPP		:=	c++
-CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g3
 
 INC_DIR	:=	.
 SRC_DIR	:=	.
 BIN_DIR	:=	./bin
 
-FILES	:=	main ClapTrap ScavTrap FragTrap
+FILES	:=	main AAnimal Dog Cat Brain
 SRC		:=	$(addprefix $(SRC_DIR)/, $(addsuffix .cpp, $(FILES)))
 
 OBJ		:=	$(SRC:$(SRC_DIR)/%.cpp=$(BIN_DIR)/%.o)
