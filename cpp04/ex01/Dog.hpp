@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:08:07 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 17:53:09 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/03 07:54:24 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Dog: public Animal
 		Dog &operator=(const Dog& obj);	// assignation operator
 		~Dog(void);						// destructor
 
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif
