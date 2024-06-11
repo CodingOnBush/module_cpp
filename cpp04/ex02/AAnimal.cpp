@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 08:03:25 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/11 18:26:07 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ AAnimal::AAnimal(void)
 AAnimal::AAnimal(const AAnimal& obj)
 {
 	std::cout << MAGENTA << "[AANIMAL] copy constructor called" << RESET << std::endl;
-	*this = obj;
+	if (this == &obj)
+		return ;
+	this->type = obj.type;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal& obj)
 {
 	std::cout << MAGENTA << "[AANIMAL] assignation operator overload called" << RESET << std::endl;
+	if (this == &obj)
+		return (*this);
 	this->type = obj.type;
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:05:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 19:37:27 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/11 18:19:04 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 
 Cat::Cat(void)
 {
+	std::cout << YELLOW << "[CAT] constructor" << RESET << std::endl;
 	this->type = "Cat";
 	this->brain = new Brain();
-	std::cout << YELLOW << "[CAT] constructor" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat& obj)
 {
 	std::cout << YELLOW << "[CAT] copy constructor" << RESET << std::endl;
-	*this = obj;
+	if (this == &obj)
+		return ;
+	this->type = obj.type;
+	this->brain = new Brain(*obj.brain);
 }
 
 Cat &Cat::operator=(const Cat& obj)
 {
 	std::cout << YELLOW << "[CAT] assignation operator" << RESET << std::endl;
+	if (this == &obj)
+		return (*this);
 	this->type = obj.type;
-	// this->brain = obj.brain; // It's a shallow copy (wrong)
-	this->brain = new Brain(*obj.brain); // It's a deep copy (correct)
+	if (this->brain)
+		delete this->brain;
+	this->brain = new Brain(*obj.brain);
 	return (*this);
 }
 
