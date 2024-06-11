@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:21:50 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 15:03:28 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/11 11:39:53 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ class AMateria
 		AMateria & operator=(AMateria const & obj);	// Copy assignment operator
 		virtual ~AMateria();						// Destructor
 
-		AMateria(std::string const & type);
+		AMateria(std::string const & type);				// from subject
 		
-		std::string const & getType(void) const;
+		std::string const &	getType(void) const;		// from subject
 
-		virtual AMateria* clone(void) const = 0;
-		virtual void use(ICharacter &target);
+		virtual AMateria*	clone(void) const = 0;		// from subject
+		virtual void		use(ICharacter &target);	// from subject
 };
 
 #endif
