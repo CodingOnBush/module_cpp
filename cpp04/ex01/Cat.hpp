@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:01:56 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 07:54:16 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:40:51 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class Cat: public Animal
 {
 	private:
-		Brain	*brain;
+		Brain	*_brain;
 
 	public:
 		Cat(void);						// default constructor
@@ -31,7 +31,7 @@ class Cat: public Animal
 		Cat &operator=(const Cat& obj);	// assignation operator
 		~Cat(void);						// destructor
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

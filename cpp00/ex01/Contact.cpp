@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:06:18 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/14 14:26:31 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:48:26 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Contact::~Contact(void)
 {
 }
 
-static std::string	getInputStr_( std::string msg )
+static std::string	getInputStr_(std::string msg)
 {
 	std::string	input = "";
 
@@ -62,7 +62,7 @@ static int	isValidPhoneNumber(std::string input)
 	return (1);
 }
 
-static std::string	getInputNumber_( std::string msg )
+static std::string	getInputNumber_(std::string msg)
 {
 	std::string	input = "";
 

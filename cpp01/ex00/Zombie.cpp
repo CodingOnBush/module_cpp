@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:18:21 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/16 17:18:22 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:48:26 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie::Zombie(std::string name) : name_(name)
 	return ;
 }
 
-Zombie::~Zombie( void )
+Zombie::~Zombie(void)
 {
 	std::cout << this->name_ << ": has been destroyed (killed)." << std::endl;
 	return;

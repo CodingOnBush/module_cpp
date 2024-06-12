@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:51:40 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 18:38:00 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:43:17 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 class Brain
 {
 	protected:
-		std::string	ideas[100];
+		std::string	ideas_[100];
 
 	public:
-		Brain(void);						// default constructor
-		Brain(const Brain& obj);			// copy constructor
+		Brain(void);												// default constructor
+		Brain(const Brain& obj);						// copy constructor
 		Brain &operator=(const Brain& obj);	// assignation operator
-		~Brain(void);						// destructor
+		~Brain(void);												// destructor
 };
 
 #endif

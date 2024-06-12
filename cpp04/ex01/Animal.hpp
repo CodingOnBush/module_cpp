@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:58:53 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/28 17:50:02 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:41:28 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Animal
 {
 	protected:
-		std::string	type;
+		std::string	_type;
 		
 	public:
 		Animal(void);							// default constructor

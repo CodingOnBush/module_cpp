@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:51:29 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 19:36:16 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:41:48 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Brain &Brain::operator=(const Brain& obj)
 {
 	std::cout << GREEN << "[BRAIN] assignation operator" << RESET << std::endl;
 	for (int i = 0; i < 100; i++)
-		this->ideas[i] = obj.ideas[i];
+		this->_ideas[i] = obj._ideas[i];
 	return (*this);
 }
 

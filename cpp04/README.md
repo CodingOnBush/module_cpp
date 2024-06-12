@@ -20,4 +20,4 @@ class Derivee : public Base
 
 
 Correction Simon :\
-Choses a notee pour passer au next level 😎: - Des folders "src" pour les fichiers .cpp et des fichiers "include" pour les .hpp. - Des fonctions log() pour imprimer ou print_line(). - Comparer les addresses des variables dans l'operateur =. Probleme au niveau de l'operateur egal. Peut etre explorer l'operateur copie? ou le constructeru en lien avec Animal ( Dog::Dog(void) : Animal() )?
+Choses a notee pour passer au next level 😎: - Des folders "src" pour les fichiers .cpp et des fichiers "include" pour les .hpp. - Des fonctions log() pour imprimer ou print_line(). - Comparer les addresses des variables dans l'operateur =. Probleme au niveau de l'operateur egal. Peut etre explorer l'operateur copie? ou le constructeru en lien avec Animal (Dog::Dog(void) : Animal())?

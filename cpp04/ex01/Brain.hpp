@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 17:51:40 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 18:38:00 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:41:42 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 class Brain
 {
-	protected:
-		std::string	ideas[100];
+	private:
+		std::string	_ideas[100];
 
 	public:
 		Brain(void);						// default constructor

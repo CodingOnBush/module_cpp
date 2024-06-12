@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 18:50:11 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:41:34 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal(void)
-	: type("default type")
+	: _type("default type")
 {
 	std::cout << MAGENTA << "[ANIMAL] default constructor called" << RESET << std::endl;
 }
@@ -27,7 +27,8 @@ Animal::Animal(const Animal& obj)
 Animal &Animal::operator=(const Animal& obj)
 {
 	std::cout << MAGENTA << "[ANIMAL] assignation operator overload called" << RESET << std::endl;
-	this->type = obj.type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 
@@ -38,7 +39,7 @@ Animal::~Animal(void)
 
 std::string Animal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void Animal::makeSound(void) const

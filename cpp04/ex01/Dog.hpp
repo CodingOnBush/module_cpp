@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:08:07 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 07:54:24 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 08:42:11 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class Dog: public Animal
 {
 	private:
-		Brain	*brain;
+		Brain	*_brain;
 
 	public:
 		Dog(void);						// default constructor

@@ -121,8 +121,8 @@ std::operator	&operator<<(std::ostream &o, const Sample &i) {
 
 int		main(void) {
 	Sample	instance1;
-	Sample	instance2( 42 );
-	Sample	instance3( instance1 );
+	Sample	instance2(42);
+	Sample	instance3(instance1);
 
 	std::cout << "instance1 : " << instance1 << std::endl;
 	std::cout << "instance2 : " << instance2 << std::endl;
@@ -155,13 +155,13 @@ Dans le cas de la fonction getRawBits que vous avez montrée, le fait de placer 
 
 L'utilisation du mot-clé const à la fin d'une déclaration de fonction est une bonne pratique de programmation, car cela permet de spécifier clairement l'intention de ne pas modifier l'objet. Cela peut également aider le compilateur à détecter les erreurs si vous essayez de modifier l'objet à l'intérieur de la fonction.\
 ```cpp
-int		getRawBits( void ) const;
+int		getRawBits(void) const;
 ```
 Si on met le const autre part :
 ```cpp
-const int	getRawBits( void );
+const int	getRawBits(void);
 // or
-int const	getRawBits( void );
+int const	getRawBits(void);
 ```
 Cela signifie que la valeur de retour de la fonction est constante. Cela signifie que la valeur retournée par la fonction ne peut pas être modifiée.\
 

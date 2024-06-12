@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:05:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 19:37:27 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:43:30 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Cat::Cat(void)
 {
+	std::cout << YELLOW << "[CAT] constructor" << RESET << std::endl;
 	this->type = "Cat";
 	this->brain = new Brain();
-	std::cout << YELLOW << "[CAT] constructor" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat& obj)

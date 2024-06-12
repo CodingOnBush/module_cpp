@@ -3,46 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:51:12 by momrane           #+#    #+#             */
-/*   Updated: 2024/05/27 17:02:14 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 09:48:26 by allblue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ) : rawValue_(0) {}
+Fixed::Fixed(void) : rawValue_(0) {}
 
-Fixed::Fixed( const Fixed &obj )
+Fixed::Fixed(const Fixed &obj)
 {
 	*this = obj;
 }
 
-Fixed &	Fixed::operator=( const Fixed &obj )
+Fixed &	Fixed::operator=(const Fixed &obj)
 {
 	this->rawValue_ = obj.getRawBits();
 	return (*this);
 }
 
-Fixed::~Fixed( void ) {}
+Fixed::~Fixed(void) {}
 
 int	Fixed::getRawBits(void) const
 {
 	return (this->rawValue_);
 }
 
-void	Fixed::setRawBits( int const raw )
+void	Fixed::setRawBits(int const raw)
 {
 	this->rawValue_ = raw;
 }
 
-Fixed::Fixed( const int value )
+Fixed::Fixed(const int value)
 {
 	this->rawValue_ = value << this->fractionalBits_;
 }
 
-Fixed::Fixed( const float value )
+Fixed::Fixed(const float value)
 {
 	this->rawValue_ = roundf(value * (1 << this->fractionalBits_));
 }
@@ -151,7 +151,7 @@ int Fixed::toInt(void) const
 	return (intResult);
 }
 
-std::ostream & operator<<( std::ostream &o, const Fixed &obj )
+std::ostream & operator<<(std::ostream &o, const Fixed &obj)
 {
 	o << obj.toFloat();
 	return (o);
