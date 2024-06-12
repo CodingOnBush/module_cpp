@@ -10,9 +10,9 @@ protected:
 
 public:
     Animal(void);							// Default constructor
-    Animal(const Animal& src);			// Copy constructor
-    Animal& operator=(const Animal& rhs);	// Assignment operator
-    virtual ~Animal(void);				// Destructor
+    Animal(const Animal& src);			    // Copy constructor
+    Animal& operator=(const Animal& rhs);   // Assignment operator
+    virtual ~Animal(void);				    // Destructor
 
     virtual void    makeSound(void) const;
     std::string     getType(void) const; 
