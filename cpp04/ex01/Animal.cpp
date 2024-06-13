@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:05:26 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/12 08:41:34 by allblue          ###   ########.fr       */
+/*   Updated: 2024/06/12 15:43:54 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal(void)
-	: _type("default type")
+	: type("default type")
 {
 	std::cout << MAGENTA << "[ANIMAL] default constructor called" << RESET << std::endl;
 }
 
-Animal::Animal(const Animal& obj)
+Animal::Animal(const Animal &obj)
 {
 	std::cout << MAGENTA << "[ANIMAL] copy constructor called" << RESET << std::endl;
 	*this = obj;
 }
 
-Animal &Animal::operator=(const Animal& obj)
+Animal &Animal::operator=(const Animal &obj)
 {
 	std::cout << MAGENTA << "[ANIMAL] assignation operator overload called" << RESET << std::endl;
 	if (this != &obj)
-		this->_type = obj._type;
+		this->type = obj.type;
 	return (*this);
 }
 
@@ -39,7 +39,7 @@ Animal::~Animal(void)
 
 std::string Animal::getType(void) const
 {
-	return (this->_type);
+	return (this->type);
 }
 
 void Animal::makeSound(void) const

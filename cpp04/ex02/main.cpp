@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 08:10:16 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 17:43:41 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-#define RED		"\033[31m"
+#define RED "\033[31m"
 
 int main(void)
 {
 	{
-		AAnimal	**array = new AAnimal*[4];
+		AAnimal **array = new AAnimal *[4];
 
 		for (int i = 0; i < 4; i++)
 		{
@@ -36,26 +36,28 @@ int main(void)
 			delete array[i];
 			std::cout << "--------------------" << std::endl;
 		}
-		delete [] array;
+		delete[] array;
 	}
 
-	std::cout << std::endl << std::endl;
-	
+	std::cout << std::endl
+			  << std::endl;
+
 	{
-		Dog	dog = Dog();
-		Dog	cpy = dog;
+		Dog dog = Dog();
+		Dog dog2 = Dog();
+		Dog cpy = dog;
+
+		cpy = dog2;
 
 		dog.makeSound();
 		cpy.makeSound();
 	}
 
-	// std::cout << std::endl << std::endl;
-
 	// {
-		// This will not compile because AAnimal is an abstract class :
-		// AAnimal	instance = AAnimal();
-		// or this one :
-		// AAnimal	i;
+	// This will not compile because AAnimal is an abstract class :
+	// AAnimal	instance = AAnimal();
+	// or this one :
+	// AAnimal	i;
 	// }
 	return (0);
 }

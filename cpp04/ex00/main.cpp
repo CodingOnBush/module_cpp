@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:59:24 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/02 17:35:01 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 18:35:02 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ static void	subsjectTest(void)
 	
 	delete j;
 	delete i;
+	delete meta;
 }
 
 int main(void)

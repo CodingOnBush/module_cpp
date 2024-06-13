@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: allblue <allblue@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:05:10 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/12 09:43:30 by allblue          ###   ########.fr       */
+/*   Updated: 2024/06/12 16:07:09 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,35 @@ Cat::Cat(void)
 {
 	std::cout << YELLOW << "[CAT] constructor" << RESET << std::endl;
 	this->type = "Cat";
-	this->brain = new Brain();
+	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat& obj)
+Cat::Cat(const Cat &obj)
 {
 	std::cout << YELLOW << "[CAT] copy constructor" << RESET << std::endl;
-	*this = obj;
+	if (this != &obj)
+	{
+		this->type = obj.type;
+		this->_brain = new Brain(*obj._brain);
+	}
 }
 
-Cat &Cat::operator=(const Cat& obj)
+Cat &Cat::operator=(const Cat &obj)
 {
 	std::cout << YELLOW << "[CAT] assignation operator" << RESET << std::endl;
-	this->type = obj.type;
-	// this->brain = obj.brain; // It's a shallow copy (wrong)
-	this->brain = new Brain(*obj.brain); // It's a deep copy (correct)
+	if (this != &obj)
+	{
+		this->type = obj.type;
+		delete this->_brain;
+		this->_brain = new Brain(*obj._brain);
+	}
 	return (*this);
 }
 
 Cat::~Cat(void)
 {
 	std::cout << YELLOW << "[CAT] destructor" << RESET << std::endl;
-	delete this->brain;
+	delete this->_brain;
 }
 
 void Cat::makeSound(void) const

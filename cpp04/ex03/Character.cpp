@@ -6,32 +6,42 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 09:18:58 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 15:05:08 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 17:53:43 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "ICharacter.hpp"
 
-Character::Character() : count_(0)
+Character::Character() : _count(0)
 {
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
 }
 
-Character::Character(Character const & obj)
-{
-	*this = obj;
-}
-
-Character & Character::operator=(Character const & obj)
+Character::Character(Character const &obj)
 {
 	if (this != &obj)
 	{
-		this->name_ = obj.name_;
+		this->_name = obj._name;
 		for (int i = 0; i < 4; i++)
 		{
-			if (this->inventory_[i])
-				delete this->inventory_[i];
-			this->inventory_[i] = obj.inventory_[i]->clone();
+			this->_inventory[i] = obj._inventory[i];
+		}
+	}
+}
+
+Character &Character::operator=(Character const &obj)
+{
+	if (this != &obj)
+	{
+		this->_name = obj._name;
+		for (int i = 0; i < 4; i++)
+		{
+			if (this->_inventory[i] != NULL)
+				delete this->_inventory[i];
+			if (obj._inventory[i] != NULL)
+				this->_inventory[i] = obj._inventory[i]->clone();
 		}
 	}
 	return (*this);
@@ -41,47 +51,47 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->inventory_[i])
-			delete this->inventory_[i];
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 	}
 }
 
-Character::Character(std::string const & name) : count_(0)
+Character::Character(std::string const &name) : _count(0)
 {
-	this->name_ = name;
+	this->_name = name;
 	for (int i = 0; i < 4; i++)
-		this->inventory_[i] = NULL;
+		this->_inventory[i] = NULL;
 }
 
-std::string const & Character::getName() const
+std::string const &Character::getName() const
 {
-	return (this->name_);
+	return (this->_name);
 }
 
-void	Character::equip(AMateria *m)
+void Character::equip(AMateria *m)
 {
-	count_++;
-	if (count_ > 4)
-		return ;
+	this->_count++;
+	if (this->_count > 4)
+		return;
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->inventory_[i])
+		if (this->_inventory[i] == NULL)
 		{
-			this->inventory_[i] = m;
+			this->_inventory[i] = m;
 			break;
 		}
 	}
 }
 
-void	Character::unequip(int idx)
+void Character::unequip(int idx)
 {
-	count_--;
+	this->_count--;
 	if (idx >= 0 && idx < 4)
-		this->inventory_[idx] = NULL;
+		this->_inventory[idx] = NULL;
 }
 
-void	Character::use(int idx, ICharacter& target)
+void Character::use(int idx, ICharacter &target)
 {
-	if (idx >= 0 && idx < 4 && this->inventory_[idx])
-		this->inventory_[idx]->use(target);
+	if (idx >= 0 && idx < 4 && this->_inventory[idx])
+		this->_inventory[idx]->use(target);
 }

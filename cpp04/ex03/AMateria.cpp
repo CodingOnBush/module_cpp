@@ -6,7 +6,7 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 08:22:29 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 15:43:26 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 16:27:07 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ AMateria::AMateria()
 {
 }
 
-AMateria::AMateria(AMateria const & obj)
+AMateria::AMateria(AMateria const &obj)
 {
 	*this = obj;
 }
 
-AMateria & AMateria::operator=(AMateria const & obj)
+AMateria &AMateria::operator=(AMateria const &obj)
 {
 	if (this != &obj)
-		this->type_ = obj.type_;
+		this->_type = obj._type;
 	return (*this);
 }
 
@@ -32,16 +32,16 @@ AMateria::~AMateria()
 {
 }
 
-AMateria::AMateria(std::string const & type) : type_(type)
+AMateria::AMateria(std::string const &type) : _type(type)
 {
 }
 
-std::string const & AMateria::getType() const
+std::string const &AMateria::getType() const
 {
-	return (this->type_);
+	return (this->_type);
 }
 
-void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter &target)
 {
 	(void)target;
 }

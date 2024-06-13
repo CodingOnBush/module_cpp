@@ -6,32 +6,32 @@
 /*   By: momrane <momrane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:01:56 by momrane           #+#    #+#             */
-/*   Updated: 2024/06/03 08:07:42 by momrane          ###   ########.fr       */
+/*   Updated: 2024/06/12 16:07:09 by momrane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
-# define CAT_HPP
+#define CAT_HPP
 
-# include <iostream>
-# include "AAnimal.hpp"
-# include "Brain.hpp"
+#include <iostream>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-# define YELLOW	"\033[33m"
-# define RESET	"\033[0m"
+#define YELLOW "\033[33m"
+#define RESET "\033[0m"
 
-class Cat: public AAnimal
+class Cat : public AAnimal
 {
-	private:
-		Brain	*brain;
+private:
+	Brain *_brain;
 
-	public:
-		Cat(void);						// default constructor
-		Cat(const Cat& obj);			// copy constructor
-		Cat &operator=(const Cat& obj);	// assignation operator
-		~Cat(void);						// destructor
+public:
+	Cat(void);						// default constructor
+	Cat(const Cat &obj);			// copy constructor
+	Cat &operator=(const Cat &obj); // assignation operator
+	~Cat(void);						// destructor
 
-		virtual void	makeSound(void) const;
+	virtual void makeSound(void) const;
 };
 
 #endif
